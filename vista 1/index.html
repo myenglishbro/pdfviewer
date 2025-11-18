@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Viewer · Vista 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body data-view="vista1">
+  <main class="layout">
+    <section class="resource-panel">
+      <div class="view-meta">
+        <h2 id="viewTitle">Speaking</h2>
+        <p id="viewDescription">Selecciona recursos para mostrarlos en el visor PDF.</p>
+      </div>
+      <div id="cardContainer" class="resource-board"></div>
+    </section>
+
+    <section class="viewer-panel">
+      <div>
+        <h3>Visualizador de PDF</h3>
+        <p id="viewerInfo" class="card-meta">Elige un recurso para visualizarlo.</p>
+      </div>
+      <div class="viewer-frame">
+        <iframe id="pdfFrame" title="PDF Viewer"></iframe>
+        <div class="iframe-mask" aria-hidden="true"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="splash" class="splash hidden">
+    <div class="splash-card">
+      <p class="splash-overline" id="splashLabel">Welcome Ace Student</p>
+      <h2 id="splashTitle">Let's practice</h2>
+    </div>
+  </div>
+  <script src="../js/common.js"></script>
+  <script src="../js/vista1.js"></script>
+</body>
+</html>
+
+
+
