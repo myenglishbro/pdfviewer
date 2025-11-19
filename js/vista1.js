@@ -12,6 +12,19 @@
           titulo: 'Reading Worksheet 1',
           descripcion: '',
           url: 'https://drive.google.com/file/d/1skyBIxAWdIbCVZuGMMqHQZuE8FRWvD3T/view?usp=sharing',
+          video: 'https://www.youtube.com/watch?v=ysz5S6PUM-U',
+          videoTitle: 'Reading strategy booster',
+          highlights: [
+            {
+              title: 'Objetivo del video',
+              text: 'Refuerza el escaneo rápido para encontrar ideas principales antes de leer en detalle.',
+            },
+            'Subraya verbos y adjetivos clave mientras completas la hoja de trabajo.',
+            {
+              title: 'Extra tip',
+              text: 'Anota tres palabras nuevas por texto y agrégalas a tu glosario personal.',
+            },
+          ],
         },
       ],
     },
@@ -27,6 +40,18 @@
           titulo: 'Reading Worksheet 2',
           descripcion: '',
           url: 'https://drive.google.com/file/d/1s2Ate5_0px6Kjr-bQ4hNGvDxpzxQUD0x/view?usp=sharing',
+          video: 'https://www.youtube.com/watch?v=aqz-KE-bpKQ',
+          notas: [
+            {
+              title: 'Warm up',
+              text: 'Lee el enunciado de cada pregunta y predice el tipo de información que necesitas localizar.',
+            },
+            'Marca conectores contrastivos (however, although, yet) para entender cambios de idea.',
+            {
+              title: 'Tiempo sugerido',
+              text: 'No inviertas más de 8 minutos en este worksheet; pasa a la siguiente parte si ya tienes una respuesta razonable.',
+            },
+          ],
         },
       ],
     },

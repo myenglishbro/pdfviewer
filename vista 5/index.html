@@ -18,9 +18,34 @@
     </section>
 
     <section class="viewer-panel">
-      <div>
-        <h3>Visualizador de PDF</h3>
+      <div class="viewer-header">
+        <h3>Visualizador principal</h3>
         <p id="viewerInfo" class="card-meta">Elige un recurso para visualizarlo.</p>
+      </div>
+      <div id="mediaPanel" class="media-panel hidden">
+        <div id="videoPanel" class="media-card video-card hidden">
+          <div class="media-card-head">
+            <div>
+              <p class="media-overline">Video guiado</p>
+              <h4 id="videoTitle">Selecciona un recurso</h4>
+            </div>
+            <a id="videoExternal" class="media-link hidden" target="_blank" rel="noopener">Abrir en ventana</a>
+          </div>
+          <div class="video-frame">
+            <iframe
+              id="videoFrame"
+              title="Video complementario"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <div id="notesPanel" class="media-card notes-card hidden">
+          <div class="media-card-head">
+            <p class="media-overline">Notas clave</p>
+          </div>
+          <ul id="notesList" class="notes-list"></ul>
+        </div>
       </div>
       <div class="viewer-frame">
         <iframe id="pdfFrame" title="PDF Viewer"></iframe>

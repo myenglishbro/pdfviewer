@@ -9,6 +9,13 @@
   const splashLabel = document.getElementById('splashLabel');
   const mask = document.querySelector('.iframe-mask');
   const resourcePanel = document.querySelector('.resource-panel');
+  const mediaPanel = document.getElementById('mediaPanel');
+  const videoPanel = document.getElementById('videoPanel');
+  const videoFrame = document.getElementById('videoFrame');
+  const videoTitleEl = document.getElementById('videoTitle');
+  const videoExternal = document.getElementById('videoExternal');
+  const notesPanel = document.getElementById('notesPanel');
+  const notesList = document.getElementById('notesList');
   const VIEWED_KEY = 'viewerHistory';
   const COLLAPSE_KEY = 'sidebarCollapsed';
 
@@ -173,6 +180,19 @@
     return url;
   }
 
+  function normalizeVideoUrl(url) {
+    if (!url) return null;
+    const ytMatch = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]+)/i);
+    if (ytMatch) {
+      return `https://www.youtube.com/embed/${ytMatch[1]}?rel=0`;
+    }
+    const driveMatch = url.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+    if (driveMatch) {
+      return `https://drive.google.com/file/d/${driveMatch[1]}/preview`;
+    }
+    return url;
+  }
+
   function loadPdf(url, title) {
     const src = normalizePdfUrl(url);
     if (!src || !frame) return;
@@ -180,6 +200,150 @@
     if (viewerInfo) {
       viewerInfo.textContent = `Mostrando: ${title}`;
     }
+  }
+
+  function getVideoSource(link) {
+    if (!link) {
+      return null;
+    }
+    const candidate =
+      link.video ||
+      link.videoUrl ||
+      link.videoSrc ||
+      link.urlVideo ||
+      link.videoPreview ||
+      link.url3 ||
+      link.videoExternal ||
+      link.videoLink ||
+      null;
+    if (!candidate) {
+      return null;
+    }
+    return {
+      raw: candidate,
+      external:
+        link.videoExternal ||
+        link.videoLink ||
+        link.urlVideoExternal ||
+        link.url3External ||
+        candidate,
+      title: link.videoTitle || link.videoLabel || '',
+    };
+  }
+
+  function getHighlightEntries(link) {
+    if (!link) {
+      return [];
+    }
+    const source =
+      link.highlights ||
+      link.notas ||
+      link.notes ||
+      link.textos ||
+      link.detalles ||
+      link.textGroup;
+    if (!source) {
+      return [];
+    }
+    const entries = Array.isArray(source) ? source : [source];
+    return entries
+      .map((entry) => {
+        if (typeof entry === 'string') {
+          const text = entry.trim();
+          return text ? { text } : null;
+        }
+        if (entry && typeof entry === 'object') {
+          const label = (entry.title || entry.label || entry.heading || '').trim();
+          const text = (entry.text || entry.body || entry.descripcion || entry.description || '').trim();
+          if (!label && !text) {
+            return null;
+          }
+          return { label, text };
+        }
+        return null;
+      })
+      .filter(Boolean);
+  }
+
+  function renderHighlights(entries) {
+    if (!notesPanel || !notesList) {
+      return 0;
+    }
+    notesList.innerHTML = '';
+    if (!entries || entries.length === 0) {
+      notesPanel.classList.add('hidden');
+      return 0;
+    }
+    entries.forEach((entry) => {
+      const item = document.createElement('li');
+      if (entry.label) {
+        const labelEl = document.createElement('span');
+        labelEl.className = 'note-label';
+        labelEl.textContent = entry.label;
+        item.appendChild(labelEl);
+      }
+      if (entry.text) {
+        const textEl = document.createElement('p');
+        textEl.textContent = entry.text;
+        item.appendChild(textEl);
+      }
+      notesList.appendChild(item);
+    });
+    notesPanel.classList.remove('hidden');
+    return entries.length;
+  }
+
+  function updateMedia(link, titleText) {
+    const videoSource = getVideoSource(link);
+    let hasVideo = false;
+    if (videoPanel && videoFrame) {
+      if (videoSource && videoSource.raw) {
+        const normalized = normalizeVideoUrl(videoSource.raw);
+        videoFrame.src = normalized || '';
+        videoPanel.classList.remove('hidden');
+        const nextTitle =
+          (videoSource.title && videoSource.title.trim()) ||
+          (link && link.titulo) ||
+          titleText ||
+          'Video seleccionado';
+        if (videoTitleEl) {
+          videoTitleEl.textContent = nextTitle;
+        }
+        if (videoExternal) {
+          videoExternal.href = videoSource.external || videoSource.raw;
+          videoExternal.classList.remove('hidden');
+        }
+        hasVideo = true;
+      } else {
+        videoFrame.src = '';
+        videoPanel.classList.add('hidden');
+        if (videoExternal) {
+          videoExternal.removeAttribute('href');
+          videoExternal.classList.add('hidden');
+        }
+        if (videoTitleEl) {
+          videoTitleEl.textContent = 'Selecciona un recurso';
+        }
+      }
+    }
+    const highlights = getHighlightEntries(link);
+    const hasHighlights = renderHighlights(highlights) > 0;
+    if (mediaPanel) {
+      mediaPanel.classList.toggle('hidden', !(hasVideo || hasHighlights));
+    }
+  }
+
+  function loadResource(link, title) {
+    if (!link) {
+      updateMedia(null, '');
+      return;
+    }
+    if (link.url) {
+      loadPdf(link.url, title);
+    } else if (viewerInfo && title) {
+      viewerInfo.textContent = `Recurso seleccionado: ${title}`;
+    }
+    updateMedia(link, title);
   }
 
   function getLinkId(link, resourceTitle, index) {
@@ -263,6 +427,8 @@
     const isSeen = viewedDocs.has(linkId);
 
     const titleText = link && link.titulo ? link.titulo : `Recurso ${index + 1}`;
+    const videoSource = getVideoSource(link);
+    const highlightEntries = getHighlightEntries(link);
     const content = document.createElement('div');
     content.className = 'link-content';
 
@@ -315,7 +481,7 @@
       setDocSeen(linkId, next);
     });
 
-    if (link.url) {
+    if (link && (link.url || videoSource || highlightEntries.length > 0)) {
       const viewBtn = document.createElement('button');
       viewBtn.className = 'resource-action primary';
       viewBtn.type = 'button';
@@ -330,7 +496,7 @@
         </span>
       `;
       viewBtn.addEventListener('click', () => {
-        loadPdf(link.url, titleText);
+        loadResource(link, titleText);
         if (!checkbox.checked) {
           checkbox.checked = true;
           syncCheckState(true);
@@ -340,11 +506,11 @@
       actions.appendChild(viewBtn);
     }
 
-    if (link.url3) {
+    if (videoSource && videoSource.external && videoSource.external !== (link && link.url)) {
       const yt = document.createElement('a');
       yt.className = 'resource-action secondary';
       yt.textContent = 'Video';
-      yt.href = link.url3;
+      yt.href = videoSource.external;
       yt.title = 'Abrir video';
       yt.setAttribute('aria-label', `Abrir video de ${titleText}`);
       yt.target = '_blank';
