@@ -3,6 +3,7 @@
   const descEl = document.getElementById('viewDescription');
   const cardContainer = document.getElementById('cardContainer');
   const frame = document.getElementById('pdfFrame');
+  const viewerFrameWrapper = document.querySelector('.viewer-frame');
   const viewerInfo = document.getElementById('viewerInfo');
   const splash = document.getElementById('splash');
   const splashTitle = document.getElementById('splashTitle');
@@ -13,7 +14,6 @@
   const videoPanel = document.getElementById('videoPanel');
   const videoFrame = document.getElementById('videoFrame');
   const videoTitleEl = document.getElementById('videoTitle');
-  const videoExternal = document.getElementById('videoExternal');
   const notesPanel = document.getElementById('notesPanel');
   const notesList = document.getElementById('notesList');
   const VIEWED_KEY = 'viewerHistory';
@@ -193,10 +193,28 @@
     return url;
   }
 
+  function setPdfVisibility(visible) {
+    if (!viewerFrameWrapper) {
+      return;
+    }
+    viewerFrameWrapper.classList.toggle('hidden', !visible);
+  }
+
+  function clearPdfViewer(message) {
+    if (frame) {
+      frame.src = '';
+    }
+    setPdfVisibility(false);
+    if (viewerInfo && message) {
+      viewerInfo.textContent = message;
+    }
+  }
+
   function loadPdf(url, title) {
     const src = normalizePdfUrl(url);
     if (!src || !frame) return;
     frame.src = src;
+    setPdfVisibility(true);
     if (viewerInfo) {
       viewerInfo.textContent = `Mostrando: ${title}`;
     }
@@ -309,18 +327,10 @@
         if (videoTitleEl) {
           videoTitleEl.textContent = nextTitle;
         }
-        if (videoExternal) {
-          videoExternal.href = videoSource.external || videoSource.raw;
-          videoExternal.classList.remove('hidden');
-        }
         hasVideo = true;
       } else {
         videoFrame.src = '';
         videoPanel.classList.add('hidden');
-        if (videoExternal) {
-          videoExternal.removeAttribute('href');
-          videoExternal.classList.add('hidden');
-        }
         if (videoTitleEl) {
           videoTitleEl.textContent = 'Selecciona un recurso';
         }
@@ -335,13 +345,20 @@
 
   function loadResource(link, title) {
     if (!link) {
+      clearPdfViewer('Selecciona un recurso para visualizarlo.');
       updateMedia(null, '');
       return;
     }
     if (link.url) {
       loadPdf(link.url, title);
-    } else if (viewerInfo && title) {
-      viewerInfo.textContent = `Recurso seleccionado: ${title}`;
+    } else {
+      const videoSource = getVideoSource(link);
+      const statusMessage = videoSource
+        ? `Reproduciendo video: ${title || 'recurso seleccionado'}`
+        : title
+        ? `Recurso seleccionado: ${title}`
+        : '';
+      clearPdfViewer(statusMessage);
     }
     updateMedia(link, title);
   }
@@ -481,6 +498,15 @@
       setDocSeen(linkId, next);
     });
 
+    const openResource = () => {
+      loadResource(link, titleText);
+      if (!checkbox.checked) {
+        checkbox.checked = true;
+        syncCheckState(true);
+      }
+      setDocSeen(linkId, true);
+    };
+
     if (link && (link.url || videoSource || highlightEntries.length > 0)) {
       const viewBtn = document.createElement('button');
       viewBtn.className = 'resource-action primary';
@@ -495,27 +521,20 @@
           </svg>
         </span>
       `;
-      viewBtn.addEventListener('click', () => {
-        loadResource(link, titleText);
-        if (!checkbox.checked) {
-          checkbox.checked = true;
-          syncCheckState(true);
-        }
-        setDocSeen(linkId, true);
-      });
+      viewBtn.addEventListener('click', openResource);
       actions.appendChild(viewBtn);
     }
 
-    if (videoSource && videoSource.external && videoSource.external !== (link && link.url)) {
-      const yt = document.createElement('a');
-      yt.className = 'resource-action secondary';
-      yt.textContent = 'Video';
-      yt.href = videoSource.external;
-      yt.title = 'Abrir video';
-      yt.setAttribute('aria-label', `Abrir video de ${titleText}`);
-      yt.target = '_blank';
-      yt.rel = 'noopener';
-      actions.appendChild(yt);
+    if (videoSource) {
+      const videoBtn = document.createElement('button');
+      videoBtn.type = 'button';
+      videoBtn.className = 'resource-action secondary';
+      const label = (videoSource.title && videoSource.title.trim()) || 'Video';
+      videoBtn.textContent = label;
+      videoBtn.title = 'Reproducir video en el visor';
+      videoBtn.setAttribute('aria-label', `Reproducir video de ${titleText} en el visor`);
+      videoBtn.addEventListener('click', openResource);
+      actions.appendChild(videoBtn);
     }
 
     if (link.url4) {

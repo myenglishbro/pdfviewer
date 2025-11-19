@@ -16,7 +16,7 @@
     <h1>Preparación Cambridge B2</h1>
     <p class="hero-subtitle">Roadmap completo para dominar cada skill del examen con recursos interactivos, feedback guiado y simulaciones reales.</p>
     <div class="hero-actions">
-      <a class="btn primary" href="vista 1/index.html">Entrar al campus</a>
+      <button class="btn primary campus-link" type="button" data-campus-target="vista 1/index.html">Entrar al campus</button>
       <a class="btn ghost" href="https://www.cambridgeenglish.org/exams-and-tests/first/" target="_blank" rel="noopener">Guía oficial</a>
     </div>
   </header>
@@ -31,7 +31,7 @@
     </section>
 
     <div class="card-grid">
-      <article class="card" style="--cover:url('https://i.ibb.co/0RvrgB5X/519b73d3-a376-4540-bb54-916134df1802.png')">
+      <article class="card" style="--cover:url('https://i.ibb.co/Nvvrgkm/Chat-GPT-Image-19-nov-2025-16-18-33.png')">
         <div class="card-badges">
           <span class="pill blue">Nuevo</span>
           <span class="pill purple">PDF + Video</span>
@@ -41,11 +41,11 @@
         <p>Roadmap para mastering comprehension y time management en el paper 1.</p>
         <div class="card-meta">
           <span>6 bloques · 12 recursos</span>
-          <a href="vista 1/index.html" class="btn small">Abrir vista</a>
+          <a href="vista 1/index.html" class="btn small campus-link" data-campus-target="vista 1/index.html">Abrir vista</a>
         </div>
       </article>
 
-      <article class="card" style="--cover:url('https://i.ibb.co/NnxDcRLd/Chat-GPT-Image-19-nov-2025-10-49-25.png')">
+      <article class="card" style="--cover:url('https://i.ibb.co/99mqkWMy/Chat-GPT-Image-19-nov-2025-18-32-34.png')">
         <div class="card-badges">
           <span class="pill cyan">Prácticas</span>
           <span class="pill purple">Feedback</span>
@@ -55,11 +55,11 @@
         <p>Plantillas, modelos y correcciones guiadas para cada parte del Writing.</p>
         <div class="card-meta">
           <span>3 bloques · 8 recursos</span>
-          <a href="vista 2/index.html" class="btn small">Abrir vista</a>
+          <a href="vista 2/index.html" class="btn small campus-link" data-campus-target="vista 2/index.html">Abrir vista</a>
         </div>
       </article>
 
-      <article class="card" style="--cover:url('https://i.ibb.co/wNyJKqNw/Chat-GPT-Image-19-nov-2025-10-43-32.png')">
+      <article class="card" style="--cover:url('https://i.ibb.co/jPK8ZQDL/Chat-GPT-Image-19-nov-2025-18-43-39.png')">
         <div class="card-badges">
           <span class="pill blue">Listening</span>
           <span class="pill cyan">Sim</span>
@@ -69,11 +69,11 @@
         <p>Clases guiadas con audios reales y ejercicios tipo Cambridge.</p>
         <div class="card-meta">
           <span>4 bloques · 10 recursos</span>
-          <a href="vista 3/index.html" class="btn small">Abrir vista</a>
+          <a href="vista 3/index.html" class="btn small campus-link" data-campus-target="vista 3/index.html">Abrir vista</a>
         </div>
       </article>
 
-      <article class="card" style="--cover:url('https://i.ibb.co/BVBfcB4b/Chat-GPT-Image-19-nov-2025-13-04-02.png')">
+      <article class="card" style="--cover:url('https://i.ibb.co/4gPtj8xn/Chat-GPT-Image-19-nov-2025-18-28-33.png')">
         <div class="card-badges">
           <span class="pill purple">Speaking</span>
           <span class="pill blue">Pro Tips</span>
@@ -83,7 +83,7 @@
         <p>Simulaciones guiadas con examiner feedback y videos demostrativos.</p>
         <div class="card-meta">
           <span>4 bloques · 9 recursos</span>
-          <a href="vista 4/index.html" class="btn small">Abrir vista</a>
+          <a href="vista 4/index.html" class="btn small campus-link" data-campus-target="vista 4/index.html">Abrir vista</a>
         </div>
       </article>
 
@@ -97,7 +97,21 @@
         <p>Plan semanal, hábitos y seguimiento para llegar confiado al examen.</p>
         <div class="card-meta">
           <span>5 bloques · 6 recursos</span>
-          <a href="vista 5/index.html" class="btn small">Abrir vista</a>
+          <a href="vista 5/index.html" class="btn small campus-link" data-campus-target="vista 5/index.html">Abrir vista</a>
+        </div>
+      </article>
+
+      <article class="card" style="--cover:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80')">
+        <div class="card-badges">
+          <span class="pill purple">Grammar</span>
+          <span class="pill cyan">Core</span>
+        </div>
+        <div class="card-cover"></div>
+        <h3>Essential Grammar</h3>
+        <p>Laboratorio express para reforzar estructuras clave antes de cada mock.</p>
+        <div class="card-meta">
+          <span>4 bloques · 8 recursos</span>
+          <a href="vista 6/index.html" class="btn small campus-link" data-campus-target="vista 6/index.html">Abrir vista</a>
         </div>
       </article>
 
@@ -116,5 +130,184 @@
       </article>
     </div>
   </main>
+
+  <div class="login-modal hidden" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+    <div class="login-card">
+      <button class="login-close" id="loginClose" type="button" aria-label="Cerrar ventana" data-login-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="login-emblem">
+        <div class="login-emblem-icon">B2</div>
+        <div>
+          <p class="login-emblem-label">Cambridge Campus</p>
+          <p class="login-emblem-title">Access demo</p>
+        </div>
+      </div>
+      <p class="login-tag">demo segura</p>
+      <h2 id="loginTitle">Ingresa al campus</h2>
+      <p class="login-copy">Usa tu usuario demo para acceder al roadmap completo y a los recursos descargables.</p>
+      <ul class="login-checklist">
+        <li><span aria-hidden="true">&check;</span> Roadmap guiado por bloques</li>
+        <li><span aria-hidden="true">&check;</span> PDFs + videos exclusivos</li>
+        <li><span aria-hidden="true">&check;</span> Checklist de speaking y writing</li>
+      </ul>
+      <form id="loginForm" novalidate>
+        <label class="login-field">
+          <span>Usuario</span>
+          <div class="login-input-shell">
+            <input id="loginUser" name="username" type="text" autocomplete="username" placeholder="myenglishbro" required>
+          </div>
+        </label>
+        <label class="login-field">
+          <span>Contrase&ntilde;a</span>
+          <div class="login-input-shell login-password-shell">
+            <input id="loginPass" name="password" type="password" autocomplete="current-password" placeholder="********" required>
+            <button class="login-toggle" id="passwordToggle" type="button" aria-label="Mostrar contrase&ntilde;a">Mostrar</button>
+          </div>
+        </label>
+        <p class="login-caps" id="capsWarning" aria-live="polite"></p>
+        <p class="login-hint">Hint: myenglishbro / acelingua</p>
+        <p class="login-error" id="loginError" role="alert" aria-live="polite"></p>
+        <p class="login-success" id="loginSuccess" aria-live="polite"></p>
+        <button class="btn primary login-submit" id="loginSubmit" type="submit">
+          <span class="login-submit-label">Entrar</span>
+          <span class="login-spinner" aria-hidden="true"></span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const modal = document.getElementById('loginModal');
+      const form = document.getElementById('loginForm');
+      const closeTargets = document.querySelectorAll('[data-login-close]');
+      const loginCard = document.querySelector('.login-card');
+      const errorBox = document.getElementById('loginError');
+      const successBox = document.getElementById('loginSuccess');
+      const submitBtn = document.getElementById('loginSubmit');
+      const submitLabel = submitBtn?.querySelector('.login-submit-label');
+      const spinner = submitBtn?.querySelector('.login-spinner');
+      const userInput = document.getElementById('loginUser');
+      const passInput = document.getElementById('loginPass');
+      const campusLinks = document.querySelectorAll('[data-campus-target]');
+      const passwordToggle = document.getElementById('passwordToggle');
+      const capsWarning = document.getElementById('capsWarning');
+      const DEFAULT_URL = 'vista 1/index.html';
+      const VALID_USER = 'myenglishbro';
+      const VALID_PASS = 'acelingua';
+      let targetUrl = DEFAULT_URL;
+
+      if (!modal || !form || !userInput || !passInput || !submitBtn) {
+        return;
+      }
+
+      const openModal = (destination) => {
+        targetUrl = destination || DEFAULT_URL;
+        modal.classList.remove('hidden');
+        document.body.classList.add('modal-open');
+        window.setTimeout(() => userInput.focus(), 50);
+      };
+
+      const closeModal = () => {
+        modal.classList.add('hidden');
+        document.body.classList.remove('modal-open');
+        form.reset();
+        errorBox.textContent = '';
+        successBox.textContent = '';
+        if (capsWarning) {
+          capsWarning.textContent = '';
+        }
+        passInput.type = 'password';
+        if (passwordToggle) {
+          passwordToggle.textContent = 'Mostrar';
+        }
+        setLoadingState(false);
+      };
+
+      const setLoadingState = (isLoading) => {
+        submitBtn.disabled = isLoading;
+        if (isLoading) {
+          submitLabel && (submitLabel.textContent = 'Validando...');
+          spinner?.classList.add('visible');
+        } else {
+          submitLabel && (submitLabel.textContent = 'Entrar');
+          spinner?.classList.remove('visible');
+        }
+      };
+
+      const triggerShake = () => {
+        if (!loginCard) return;
+        loginCard.classList.remove('shake');
+        void loginCard.offsetWidth;
+        loginCard.classList.add('shake');
+      };
+
+      campusLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          const destination = link.dataset.campusTarget || link.getAttribute('href') || DEFAULT_URL;
+          openModal(destination);
+        });
+      });
+
+      closeTargets.forEach((btn) => {
+        btn.addEventListener('click', (event) => {
+          event.preventDefault();
+          closeModal();
+        });
+      });
+
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+
+      passwordToggle?.addEventListener('click', () => {
+        const isHidden = passInput.type === 'password';
+        passInput.type = isHidden ? 'text' : 'password';
+        passwordToggle.textContent = isHidden ? 'Ocultar' : 'Mostrar';
+      });
+
+      const handleCapsWarning = (event) => {
+        if (!capsWarning) return;
+        const isCapsOn = event.getModifierState && event.getModifierState('CapsLock');
+        capsWarning.textContent = isCapsOn ? 'Bloq Mayus activado' : '';
+      };
+
+      passInput.addEventListener('keydown', handleCapsWarning);
+      passInput.addEventListener('keyup', handleCapsWarning);
+      passInput.addEventListener('blur', () => {
+        capsWarning.textContent = '';
+      });
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const username = userInput.value.trim();
+        const password = passInput.value.trim();
+
+        if (username === VALID_USER && password === VALID_PASS) {
+          errorBox.textContent = '';
+          successBox.textContent = 'Acceso verificado. Cargando tu vista personalizada...';
+          setLoadingState(true);
+          setTimeout(() => {
+            window.location.href = targetUrl;
+          }, 900);
+        } else {
+          successBox.textContent = '';
+          errorBox.textContent = 'Usuario o contrasena incorrectos. Hint: revisa la guia de onboarding 😉';
+          triggerShake();
+          setLoadingState(false);
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
