@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>PDF Viewer · Vista 1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body data-view="vista1">
@@ -23,7 +24,23 @@
       </div>
       <div class="viewer-frame">
         <iframe id="pdfFrame" title="PDF Viewer"></iframe>
-        <div class="iframe-mask" aria-hidden="true"></div>
+        <button type="button" class="iframe-mask group inline-flex items-center gap-3 text-left">
+          <span class="mask-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+              <path d="M12 12a3 3 0 0 0 3-3V7a3 3 0 0 0-6 0v2a3 3 0 0 0 3 3Z" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M5.5 11.25a1.75 1.75 0 0 1 1.75-1.75h9.5A1.75 1.75 0 0 1 18.5 11.25v6a1.75 1.75 0 0 1-1.75 1.75h-9.5A1.75 1.75 0 0 1 5.5 17.25v-6Z" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="mask-text">
+            <span class="mask-status">Modo seguro</span>
+            <span class="mask-state">Desbloquear visor</span>
+          </span>
+          <span class="mask-hint" aria-hidden="true">
+            <svg viewBox="0 0 20 20" role="presentation" focusable="false">
+              <path d="M7 5l5 5-5 5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
       </div>
     </section>
   </main>

@@ -9,12 +9,12 @@
       description: ' ',
       enlaces: [
         {
-          titulo: 'Test _ Train Practice Test 1 B2 First Speaking frames',
-          descripcion: 'PDF con preguntas y respuestas sugeridas',
+          titulo: 'Test _ Train Practice Test 1 ',
+          descripcion: 'PDF ',
           url: 'https://drive.google.com/file/d/1qlsk-pLemEU_NJF_1RQ_JhEGc1UqflGC/view?usp=sharing',
         },
         {
-          titulo: 'Test _ Train Practice Test 1 B2 First Speaking candidate handout',
+          titulo: 'Test _ Train Practice Test 1 ',
           descripcion: 'Tutorial paso a paso',
           url: 'https://drive.google.com/file/d/17Ue1TWl0rzrAPN3hvAvUTvxjup7CpCCM/view?usp=sharing',
         },
@@ -29,8 +29,8 @@
       description: ' ',
       enlaces: [
         {
-          titulo: 'Test _ Train Practice Test 1 B2 First Speaking frames',
-          descripcion: 'PDF con preguntas y respuestas sugeridas',
+          titulo: 'Test _ Train Practice Test 1 ',
+          descripcion: 'PDF ',
           url: 'https://drive.google.com/file/d/1qlsk-pLemEU_NJF_1RQ_JhEGc1UqflGC/view?usp=sharing',
         },
         {
