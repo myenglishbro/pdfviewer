@@ -16,6 +16,13 @@
   const videoTitleEl = document.getElementById('videoTitle');
   const notesPanel = document.getElementById('notesPanel');
   const notesList = document.getElementById('notesList');
+  const sliderState = { hasVideo: false, hasPdf: false, active: 'video' };
+  const sliderControls = createSliderControls();
+  const sliderEl = sliderControls?.slider || null;
+  const sliderPrev = sliderControls?.prev || null;
+  const sliderNext = sliderControls?.next || null;
+  const sliderChip = sliderControls?.chip || null;
+  const sliderTabs = sliderControls?.tabs || [];
   const VIEWED_KEY = 'viewerHistory';
   const COLLAPSE_KEY = 'sidebarCollapsed';
 
@@ -51,6 +58,84 @@
   if (mask) {
     mask.addEventListener('click', unlockViewer);
   }
+
+  function createSliderControls() {
+    const viewer = document.querySelector('.viewer-panel');
+    if (!viewer) return null;
+    const slider = document.createElement('div');
+    slider.id = 'viewerSlider';
+    slider.className = 'viewer-slider hidden';
+    slider.innerHTML = `
+      <div class="slider-tabs">
+        <button type="button" class="slider-tab is-active" data-slider-target="video">Video</button>
+        <button type="button" class="slider-tab" data-slider-target="pdf">PDF</button>
+      </div>
+      <div class="slider-arrows">
+        <button id="sliderPrev" type="button" class="slider-btn" aria-label="Anterior">&#x2039;</button>
+        <div class="slider-chip" id="sliderChip">Video</div>
+        <button id="sliderNext" type="button" class="slider-btn" aria-label="Siguiente">&#x203A;</button>
+      </div>
+    `;
+    const mediaPanelEl = viewer.querySelector('.media-panel');
+    viewer.insertBefore(slider, mediaPanelEl || viewer.firstChild);
+    const prev = slider.querySelector('#sliderPrev');
+    const next = slider.querySelector('#sliderNext');
+    const chip = slider.querySelector('#sliderChip');
+    const tabs = Array.from(slider.querySelectorAll('[data-slider-target]'));
+    return { slider, prev, next, chip, tabs };
+  }
+
+  function setSliderSlide(target) {
+    if (!sliderState.hasPdf || !sliderState.hasVideo) return;
+    sliderState.active = target === 'pdf' ? 'pdf' : 'video';
+    const showVideo = sliderState.active === 'video';
+    const showPdf = sliderState.active === 'pdf';
+    if (videoPanel) {
+      videoPanel.classList.toggle('hidden', !showVideo);
+    }
+    setPdfVisibility(showPdf);
+    if (sliderChip) {
+      sliderChip.textContent = sliderState.active === 'video' ? 'Video' : 'PDF';
+    }
+    sliderTabs.forEach((tab) => {
+      tab.classList.toggle('is-active', tab.dataset.sliderTarget === sliderState.active);
+    });
+  }
+
+  function syncSlider(hasPdf, hasVideo) {
+    sliderState.hasPdf = !!hasPdf;
+    sliderState.hasVideo = !!hasVideo;
+    const showSlider = sliderState.hasPdf && sliderState.hasVideo;
+    if (sliderEl) {
+      sliderEl.classList.toggle('hidden', !showSlider);
+    }
+    if (!showSlider) {
+      if (!sliderState.hasPdf) {
+        setPdfVisibility(false);
+      } else {
+        setPdfVisibility(true);
+      }
+      return;
+    }
+    setSliderSlide('video');
+  }
+
+  function attachSliderEvents() {
+    if (!sliderEl) return;
+    sliderPrev?.addEventListener('click', () => {
+      setSliderSlide(sliderState.active === 'video' ? 'pdf' : 'video');
+    });
+    sliderNext?.addEventListener('click', () => {
+      setSliderSlide(sliderState.active === 'video' ? 'pdf' : 'video');
+    });
+    sliderTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        setSliderSlide(tab.dataset.sliderTarget === 'pdf' ? 'pdf' : 'video');
+      });
+    });
+  }
+
+  attachSliderEvents();
 
   function readCollapsePreference() {
     try {
@@ -210,11 +295,11 @@
     }
   }
 
-  function loadPdf(url, title) {
+  function loadPdf(url, title, autoShow = true) {
     const src = normalizePdfUrl(url);
     if (!src || !frame) return;
     frame.src = src;
-    setPdfVisibility(true);
+    setPdfVisibility(autoShow);
     if (viewerInfo) {
       viewerInfo.textContent = `Mostrando: ${title}`;
     }
@@ -341,6 +426,7 @@
     if (mediaPanel) {
       mediaPanel.classList.toggle('hidden', !(hasVideo || hasHighlights));
     }
+    return { hasVideo, hasHighlights };
   }
 
   function loadResource(link, title) {
@@ -349,10 +435,15 @@
       updateMedia(null, '');
       return;
     }
-    if (link.url) {
-      loadPdf(link.url, title);
+    const videoSource = getVideoSource(link);
+    const hasPdf = Boolean(link.url);
+    // Si hay video y PDF, mostramos primero el video y ocultamos el PDF hasta usar el slider
+    if (hasPdf) {
+      loadPdf(link.url, title, !videoSource);
+      if (videoSource) {
+        setPdfVisibility(false);
+      }
     } else {
-      const videoSource = getVideoSource(link);
       const statusMessage = videoSource
         ? `Reproduciendo video: ${title || 'recurso seleccionado'}`
         : title
@@ -360,7 +451,8 @@
         : '';
       clearPdfViewer(statusMessage);
     }
-    updateMedia(link, title);
+    const mediaState = updateMedia(link, title);
+    syncSlider(hasPdf, mediaState.hasVideo);
   }
 
   function getLinkId(link, resourceTitle, index) {

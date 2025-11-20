@@ -710,6 +710,90 @@ body.sidebar-collapsed .sidebar-toggle .toggle-label {
   margin: 0;
 }
 
+.viewer-slider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  align-self: flex-end;
+  margin-top: -6px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: rgba(248, 250, 252, 0.96);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
+}
+
+.viewer-slider.hidden {
+  display: none;
+}
+
+.slider-tabs {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 6px;
+}
+
+.slider-tab {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(255, 255, 255, 0.85);
+  color: #0f172a;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease, border 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.slider-tab.is-active {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(14, 165, 233, 0.15));
+  border-color: rgba(59, 130, 246, 0.55);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.12);
+}
+
+.slider-tab:hover,
+.slider-tab:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 20px rgba(15, 23, 42, 0.12);
+  outline: none;
+}
+
+.slider-arrows {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.slider-btn {
+  border: none;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(37, 99, 235, 0.12));
+  border-radius: 12px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #0f172a;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.slider-btn:hover,
+.slider-btn:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 20px rgba(15, 23, 42, 0.12);
+  outline: none;
+}
+
+.slider-chip {
+  padding: 6px 10px;
+  border-radius: 12px;
+  background: rgba(14, 165, 233, 0.08);
+  color: #0f172a;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .media-panel {
   display: flex;
   flex-direction: column;
@@ -988,16 +1072,6 @@ body.sidebar-collapsed .sidebar-toggle .toggle-label {
 
   .viewer-frame {
     gap: 12px;
-  }
-
-  .iframe-mask {
-    position: static;
-    width: 100%;
-    justify-content: center;
-    margin-top: 8px;
-    min-width: auto;
-    left: auto;
-    right: auto;
   }
 
   .link-actions {
