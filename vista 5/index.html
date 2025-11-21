@@ -5,22 +5,38 @@
   <title>PDF Viewer · Vista 5</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false },
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0f172a',
+            accent: '#2563eb'
+          },
+          fontFamily: {
+            display: ['Space Grotesk', 'Segoe UI', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
   <link rel="stylesheet" href="../styles.css">
 </head>
-<body data-view="vista5">
-  <main class="layout">
-    <section class="resource-panel">
-      <div class="view-meta">
-        <h2 id="viewTitle">Vista 5</h2>
-        <p id="viewDescription">Selecciona recursos para mostrarlos en el visor PDF.</p>
+<body data-view="vista5" class="min-h-screen bg-[radial-gradient(circle_at_18%_0%,#fef6ff_0%,#eef2ff_45%,#e2e8f0_100%)] text-slate-900 font-display">
+  <main class="layout grid gap-6 lg:gap-8 grid-cols-1 xl:grid-cols-[320px_minmax(0,1fr)] max-w-6xl mx-auto px-4 lg:px-6 py-6">
+    <section class="resource-panel flex flex-col gap-4">
+      <div class="view-meta space-y-1">
+        <h2 id="viewTitle" class="text-2xl font-semibold">Vista 5</h2>
+        <p id="viewDescription" class="text-slate-600">Selecciona recursos para mostrarlos en el visor PDF.</p>
       </div>
-      <div id="cardContainer" class="resource-board"></div>
+      <div id="cardContainer" class="resource-board grid gap-3"></div>
     </section>
 
-    <section class="viewer-panel">
+    <section class="viewer-panel flex flex-col gap-4">
       <div class="viewer-header">
-        <h3>Visualizador principal</h3>
-        <p id="viewerInfo" class="card-meta">Elige un recurso para visualizarlo.</p>
+        <h3 class="text-xl font-semibold">Visualizador principal</h3>
+        <p id="viewerInfo" class="card-meta text-slate-600">Elige un recurso para visualizarlo.</p>
       </div>
       <div id="mediaPanel" class="media-panel hidden">
         <div id="videoPanel" class="media-card video-card hidden">
@@ -79,6 +95,5 @@
   <script src="../js/vista5.js"></script>
 </body>
 </html>
-
 
 
