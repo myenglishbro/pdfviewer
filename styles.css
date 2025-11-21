@@ -79,7 +79,7 @@ body {
 .sidebar-toggle {
   position: relative;
   top: auto;
-  align-self: stretch;
+  align-self: flex-start;
   cursor: pointer;
   isolation: isolate;
   background: linear-gradient(135deg, rgba(219, 234, 254, 0.9), rgba(191, 219, 254, 0.95));
@@ -141,6 +141,11 @@ body {
     gap: 6px;
     flex-direction: row;
     min-height: auto;
+  }
+
+  .resource-panel {
+    min-height: auto;
+    max-height: none;
   }
 }
 
