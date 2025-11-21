@@ -109,6 +109,9 @@
     if (videoPanel) {
       videoPanel.classList.toggle('hidden', !showVideo);
     }
+    if (notesPanel) {
+      notesPanel.classList.toggle('hidden', !showVideo);
+    }
     setPdfVisibility(showPdf);
     if (sliderChip) {
       sliderChip.textContent = sliderState.active === 'video' ? 'Video' : 'PDF';
@@ -421,6 +424,7 @@
   function updateMedia(link, titleText) {
     const videoSource = getVideoSource(link);
     let hasVideo = false;
+    let hasHighlights = false;
     if (videoPanel && videoFrame) {
       if (videoSource && videoSource.raw) {
         const normalized = normalizeVideoUrl(videoSource.raw);
@@ -444,7 +448,11 @@
       }
     }
     const highlights = getHighlightEntries(link);
-    const hasHighlights = renderHighlights(highlights) > 0;
+    if (videoSource) {
+      hasHighlights = renderHighlights(highlights) > 0;
+    } else if (notesPanel) {
+      renderHighlights([]); // oculta anotaciones si no hay video
+    }
     if (mediaPanel) {
       mediaPanel.classList.toggle('hidden', !(hasVideo || hasHighlights));
     }
@@ -795,4 +803,3 @@
 
   window.initializeView = initializeView;
 })();
-
