@@ -64,16 +64,32 @@
     if (!viewer) return null;
     const slider = document.createElement('div');
     slider.id = 'viewerSlider';
-    slider.className = 'viewer-slider hidden';
+    slider.className = [
+      'viewer-slider',
+      'hidden',
+      'flex',
+      'items-center',
+      'justify-between',
+      'gap-3',
+      'mt-2',
+      'px-2',
+      'py-2',
+      'rounded-xl',
+      'border',
+      'border-slate-200/70',
+      'bg-white/80',
+      'shadow',
+      'shadow-blue-100/60'
+    ].join(' ');
     slider.innerHTML = `
       <div class="slider-tabs">
-        <button type="button" class="slider-tab is-active" data-slider-target="video">Video</button>
-        <button type="button" class="slider-tab" data-slider-target="pdf">PDF</button>
+        <button type="button" class="slider-tab is-active px-3 py-2 rounded-full text-sm font-semibold text-slate-700 bg-blue-100 border border-blue-200 shadow-sm" data-slider-target="video">Video</button>
+        <button type="button" class="slider-tab px-3 py-2 rounded-full text-sm font-semibold text-slate-600 bg-white border border-slate-200 shadow-sm" data-slider-target="pdf">PDF</button>
       </div>
       <div class="slider-arrows">
-        <button id="sliderPrev" type="button" class="slider-btn" aria-label="Anterior">&#x2039;</button>
-        <div class="slider-chip" id="sliderChip">Video</div>
-        <button id="sliderNext" type="button" class="slider-btn" aria-label="Siguiente">&#x203A;</button>
+        <button id="sliderPrev" type="button" class="slider-btn inline-flex items-center justify-center w-9 h-9 rounded-full border border-slate-200 bg-white hover:-translate-y-0.5 transition" aria-label="Anterior">&#x2039;</button>
+        <div class="slider-chip px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-sm font-semibold" id="sliderChip">Video</div>
+        <button id="sliderNext" type="button" class="slider-btn inline-flex items-center justify-center w-9 h-9 rounded-full border border-slate-200 bg-white hover:-translate-y-0.5 transition" aria-label="Siguiente">&#x203A;</button>
       </div>
     `;
     const mediaPanelEl = viewer.querySelector('.media-panel');
@@ -652,14 +668,35 @@
 
     data.forEach((resource, index) => {
       const card = document.createElement('details');
-      card.className = 'resource-card';
+      card.className = [
+        'resource-card',
+        'flex',
+        'flex-col',
+        'rounded-2xl',
+        'border',
+        'border-slate-200/70',
+        'bg-white/90',
+        'shadow-lg',
+        'shadow-blue-100/60',
+        'overflow-hidden'
+      ].join(' ');
       if (index === 0) {
         card.open = true;
         card.classList.add('active');
       }
 
       const summary = document.createElement('summary');
-      summary.className = 'resource-summary';
+      summary.className = [
+        'resource-summary',
+        'flex',
+        'flex-col',
+        'items-start',
+        'gap-2',
+        'w-full',
+        'text-left',
+        'px-6',
+        'py-5'
+      ].join(' ');
 
       const summaryText = document.createElement('div');
       summaryText.className = 'summary-text';
@@ -752,9 +789,6 @@
 
   window.initializeView = initializeView;
 })();
-
-
-
 
 
 
