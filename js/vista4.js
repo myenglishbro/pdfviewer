@@ -2,6 +2,37 @@
   const speakingData = [
     {
       id: 0,
+      title: 'B2 Speaking Part 01 ',
+      subtitle: ' ',
+      dateAdded: ' ',
+      channel: ' ',
+      description: ' ',
+      enlaces: [
+        {
+          titulo: 'Overview Part 01 ',
+          descripcion: 'PDF ',
+          video: 'https://youtu.be/7t2Sdk7ccfs',
+          videoTitle: 'Reading strategy booster',
+           url: 'https://drive.google.com/file/d/17Z4sJ8eNG0yVr1vtvWxuTek6gMKD2hKH/view?usp=sharing',
+
+          highlights: [
+            {
+              title: 'Objetivo del video',
+              text: 'Refuerza el escaneo rápido para encontrar ideas principales antes de leer en detalle.',
+            },
+            'Subraya verbos y adjetivos clave mientras completas la hoja de trabajo.',
+            {
+              title: 'Extra tip',
+              text: 'Anota tres palabras nuevas por texto y agrégalas a tu glosario personal.',
+            },
+          ],
+        },
+       
+      
+      ],
+    },
+    {
+      id: 0,
       title: 'B2 Speaking Exam | Structure, Tips & How You’re Assessed ',
       subtitle: ' ',
       dateAdded: ' ',
@@ -13,6 +44,11 @@
           descripcion: 'PDF ',
           video: 'https://www.youtube.com/watch?v=HcXrztQ7_IE',
 
+        },
+        {
+          titulo: 'Test _ Train Practice Test 1 ',
+          descripcion: 'Tutorial paso a paso',
+          url: 'https://drive.google.com/file/d/17Ue1TWl0rzrAPN3hvAvUTvxjup7CpCCM/view?usp=sharing',
         },
        
       ],
