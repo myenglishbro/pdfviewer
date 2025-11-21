@@ -3,329 +3,893 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preparaci&oacute;n Cambridge B2</title>
-  <link rel="stylesheet" href="landing.css">
+  <title>Preparación Cambridge B2</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false },
+      theme: {
+        extend: {
+          colors: {
+            ink: '#020617',
+            accent: '#3b82f6',
+            accent2: '#a855f7',
+            accent3: '#22d3ee'
+          },
+          fontFamily: {
+            display: ['Space Grotesk', 'Segoe UI', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="stylesheet" href="assets/css/landing.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="bg-ink text-slate-100 font-display antialiased relative min-h-screen">
+  <!-- Fondos futuristas -->
   <div class="glow"></div>
   <div class="grid-overlay"></div>
 
-  <header class="topbar container">
-    <div class="brand">
-      <span class="brand-mark">B2</span>
-      <div>
-        <p class="brand-overline">Cambridge Campus</p>
-        <strong>First Certificate 2025</strong>
+  <div class="relative z-10 max-w-6xl mx-auto px-4 lg:px-0 pb-16">
+
+    <!-- TOPBAR / HEADER -->
+    <header class="mt-4 md:mt-6 sticky top-2 z-40">
+  <div
+    class="topbar container flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4
+           px-4 md:px-5 py-3.5 md:py-4 rounded-2xl border border-[rgba(148,163,184,0.35)]
+           bg-gradient-to-r from-[rgba(15,23,42,0.95)] via-[rgba(15,23,42,0.9)] to-[rgba(37,99,235,0.25)]
+           shadow-[0_20px_50px_rgba(2,6,23,0.75)] backdrop-blur-xl"
+  >
+    <!-- BRAND -->
+    <div class="brand flex items-center gap-3 w-full md:w-auto justify-center md:justify-start">
+      <span
+        class="brand-mark w-11 h-11 md:w-12 md:h-12 grid place-items-center rounded-xl text-base md:text-lg font-bold
+               bg-gradient-to-br from-accent2 to-accent3 text-slate-950 shadow-lg shadow-sky-500/40"
+      >
+        B2
+      </span>
+      <div class="text-center md:text-left">
+        <p class="brand-overline text-[10px] md:text-[11px] uppercase tracking-[0.24em] text-slate-300/70">
+          Cambridge Campus
+        </p>
+        <strong class="text-base md:text-lg leading-tight block">
+          First Certificate 2025
+        </strong>
+        <p class="text-[11px] md:text-xs text-slate-400 mt-0.5">
+          Roadmap inmersivo con IA + simulaciones reales
+        </p>
       </div>
     </div>
-    <nav class="nav">
-      <a href="#benefits">Beneficios</a>
-      <a href="#preview">Simulaci&oacute;n</a>
-      <a href="#catalogo">Cat&aacute;logo</a>
+
+    <!-- ACTIONS -->
+    <div
+      class="top-actions order-3 md:order-2 w-full md:w-auto flex items-center gap-2 flex-wrap
+             justify-stretch sm:justify-center md:justify-end"
+    >
+      <a
+        class="btn ghost text-xs sm:text-sm flex-1 sm:flex-none text-center"
+        href="https://www.cambridgeenglish.org/exams-and-tests/first/"
+        target="_blank"
+        rel="noopener"
+      >
+        Guía oficial
+      </a>
+      <button
+        class="btn primary small campus-link text-xs sm:text-sm flex-1 sm:flex-none text-center"
+        type="button"
+        data-campus-target="vista 1/index.html"
+      >
+        Entrar
+      </button>
+    </div>
+
+    <!-- NAV -->
+    <nav
+      class="nav order-2 md:order-3 w-full md:w-auto flex items-center gap-3
+             text-xs sm:text-sm
+             justify-center md:justify-center
+             overflow-x-auto md:overflow-visible
+             scrollbar-none"
+    >
+      <a
+        class="font-semibold text-slate-200/80 hover:text-white hover:-translate-y-[1px] transition px-1 py-1"
+        href="#benefits"
+      >
+        Beneficios
+      </a>
+      <a
+        class="font-semibold text-slate-200/80 hover:text-white hover:-translate-y-[1px] transition px-1 py-1"
+        href="#preview"
+      >
+        Experiencia
+      </a>
+      <a
+        class="font-semibold text-slate-200/80 hover:text-white hover:-translate-y-[1px] transition px-1 py-1"
+        href="#catalogo"
+      >
+        Catálogo
+      </a>
     </nav>
-    <div class="top-actions">
-      <a class="btn ghost" href="https://www.cambridgeenglish.org/exams-and-tests/first/" target="_blank" rel="noopener">Gu&iacute;a oficial</a>
-      <button class="btn primary small campus-link" type="button" data-campus-target="vista 1/index.html">Entrar</button>
-    </div>
-  </header>
-
-  <section class="hero container" id="hero">
-    <div class="hero-grid">
-      <div class="hero-main">
-        <p class="hero-tag">Programa oficial | Cambridge First</p>
-        <h1>Preparaci&oacute;n  B2</h1>
-        <p class="hero-subtitle">Roadmap inmersivo con IA, simulaciones Cambridge, feedback guiado y plantillas listas para acci&oacute;n. Dise&ntilde;ado para candidatos que buscan 180+.</p>
-        <div class="hero-actions">
-          <button class="btn primary campus-link" type="button" data-campus-target="vista 1/index.html">Explorar campus</button>
-          <button class="btn ghost campus-link" type="button" data-campus-target="vista 3/index.html">Probar demo</button>
-          <a class="btn text-link" href="#catalogo">Ver cat&aacute;logo</a>
-        </div>
-      <div class="hero-meta">
-        <div class="stat-chip">
-          <span class="chip-label">Aprobaci&oacute;n</span>
-          <strong>95%</strong>
-          <small>en mocks recientes</small>
-          </div>
-          <div class="stat-chip">
-            <span class="chip-label">Recursos</span>
-            <strong>60+</strong>
-            <small>PDFs, videos, labs</small>
-          </div>
-          <div class="stat-chip">
-            <span class="chip-label">Live</span>
-            <strong>8/mes</strong>
-          <small>coaches certificados</small>
-        </div>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-screen">
-        <img src="https://i.ibb.co/Z6fhTFRZ/Chat-GPT-Image-20-nov-2025-08-10-49.png" alt="Vista previa del campus Cambridge B2">
-        <div class="hero-glare"></div>
-      </div>
-   
-    </div>
-    </div>
-  </section>
-
-  <section class="section container benefits" id="benefits">
-  <div class="section-head">
-    <p class="section-tag">Beneficios clave</p>
-    <h2>Skilling acelerado, formato Cambridge</h2>
-    <p class="section-note">Diseñado con coaches certificados, IA y playbooks accionables desde la primera semana.</p>
   </div>
+</header>
 
-  <div class="benefit-grid">
 
-    <article class="benefit-card">
-      <div class="benefit-thumb-shell">
-        <img class="benefit-thumb large" src="https://i.ibb.co/gF3MFvW8/Chat-GPT-Image-20-nov-2025-14-54-57.png" alt="Ilustración 3D de laboratorio digital">
+    <!-- MAIN -->
+    <main class="mt-10 space-y-20 lg:space-y-24">
+
+      <!-- HERO -->
+      <section id="hero" class="container mt-10 lg:mt-14">
+  <div class="grid gap-10 lg:grid-cols-[1.1fr_minmax(0,1.2fr)] items-center">
+    <!-- COLUMNA IZQUIERDA: TEXTO -->
+    <div class="space-y-5">
+      <div class="inline-flex items-center gap-2 rounded-full border border-sky-500/40 bg-sky-500/10 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.22em] text-sky-100">
+        <span class="w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_10px_rgba(56,189,248,0.9)]"></span>
+        Programa oficial · Cambridge First
       </div>
-      <h3>Labs inmersivos</h3>
-      <p>Videos guiados + PDFs navegables. Cada bloque cierra con entregable y checklist.</p>
-      <span class="pill blue">PDF + Video</span>
-    </article>
 
-    <article class="benefit-card">
-      <div class="benefit-thumb-shell">
-        <img class="benefit-thumb large" src="https://i.ibb.co/Myjd8yR0/3de464cd-f5e5-4a46-8b9e-abb545deca75.png" alt="Ilustración 3D de asistente IA">
+      <div class="space-y-3">
+        <h1 class="text-4xl lg:text-5xl xl:text-[3.2rem] font-bold leading-[1.05]">
+          Preparación
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent via-accent2 to-accent3">
+            B2 Cambridge
+          </span>
+        </h1>
+        <p class="max-w-xl text-sm sm:text-base text-slate-200/90">
+          Roadmap inmersivo con IA, simulaciones tipo Cambridge y feedback guiado.
+          Diseñado para candidatos que buscan <span class="font-semibold text-accent2">180+ de score</span>
+          sin perder el foco en cada skill.
+        </p>
       </div>
-      <h3>Feedback asistido</h3>
-      <p>Prompts calibrados para Speaking y Writing con retro inmediata y ejemplos top.</p>
-      <span class="pill purple">AI Coach</span>
-    </article>
 
-    <article class="benefit-card">
-      <div class="benefit-thumb-shell">
-        <img class="benefit-thumb large" src="https://i.ibb.co/rRFhpb8J/f5cca8c8-a956-43b3-a010-e166bec6949a-removebg-preview.png" alt="Ilustración 3D de simulación de examen">
+      <div class="flex flex-wrap gap-3">
+        <button
+          class="btn primary campus-link"
+          type="button"
+          data-campus-target="vista 1/index.html"
+        >
+          Explorar campus
+        </button>
+        <button
+          class="btn ghost campus-link"
+          type="button"
+          data-campus-target="vista 3/index.html"
+        >
+          Probar demo
+        </button>
+        <a class="btn text-link" href="#catalogo">
+          Ver catálogo
+        </a>
       </div>
-      <h3>Sim tipo examen</h3>
-      <p>Timers, scoring y scorecards. Controla tu pace en cada paper y reduce errores.</p>
-      <span class="pill cyan">Sim real</span>
-    </article>
 
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+        <div class="rounded-2xl bg-slate-900/70 border border-sky-500/30 px-4 py-3">
+          <span class="block text-[11px] uppercase tracking-wide text-slate-400">Aprobación</span>
+          <span class="block text-2xl font-semibold mt-1">95%</span>
+          <span class="block text-[11px] text-slate-400">mocks recientes</span>
+        </div>
+        <div class="rounded-2xl bg-slate-900/70 border border-fuchsia-500/30 px-4 py-3">
+          <span class="block text-[11px] uppercase tracking-wide text-slate-400">Recursos</span>
+          <span class="block text-2xl font-semibold mt-1">60+</span>
+          <span class="block text-[11px] text-slate-400">PDFs, videos, labs</span>
+        </div>
+        <div class="rounded-2xl bg-slate-900/70 border border-cyan-500/30 px-4 py-3">
+          <span class="block text-[11px] uppercase tracking-wide text-slate-400">Clases live</span>
+          <span class="block text-2xl font-semibold mt-1">8/mes</span>
+          <span class="block text-[11px] text-slate-400">coaches certificados</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLUMNA DERECHA: IMAGEN FLOTANTE (SIN CARD) -->
+    <div class="relative">
+      <!-- Aura / glow de fondo -->
+      <div class="absolute inset-0 -translate-y-6 translate-x-4">
+        <div class="w-[130%] h-[130%] bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.35),transparent_60%),radial-gradient(circle_at_bottom,_rgba(168,85,247,0.35),transparent_60%)] opacity-80 blur-3xl -z-10"></div>
+      </div>
+
+      <!-- Imagen flotante -->
+      <div class="relative w-full max-w-2xl mx-auto aspect-[16/9]">
+        <!-- “Marco” futurista muy sutil (no card clásica) -->
+        <div class="absolute inset-0 rounded-[32px] bg-gradient-to-br from-slate-900/90 via-slate-900/70 to-slate-950/95 backdrop-blur-xl border border-white/5 overflow-hidden">
+          <div class="absolute inset-x-6 top-4 h-6 rounded-full bg-slate-900/70 border border-white/5 flex items-center gap-2 px-3 text-[10px] text-slate-400">
+            <span class="w-2 h-2 rounded-full bg-rose-500/70"></span>
+            <span class="w-2 h-2 rounded-full bg-amber-400/70"></span>
+            <span class="w-2 h-2 rounded-full bg-emerald-400/70"></span>
+            <span class="ml-2 uppercase tracking-[0.18em] text-[9px] text-slate-400/90">
+              Cambridge B2 · Campus View
+            </span>
+          </div>
+
+          <img
+            src="https://i.ibb.co/Z6fhTFRZ/Chat-GPT-Image-20-nov-2025-08-10-49.png"
+            alt="Vista previa del campus Cambridge B2"
+            class="absolute inset-x-6 bottom-5 top-10 w-[calc(100%-3rem)] h-[calc(100%-3.75rem)] object-cover rounded-[22px] drop-shadow-[0_40px_90px_rgba(8,47,73,0.85)] -rotate-2"
+          >
+        </div>
+
+        <!-- Placa flotante pequeña -->
+        <div class="absolute -bottom-6 right-4 rounded-2xl bg-slate-900/90 border border-sky-500/40 px-4 py-3 flex items-center gap-3 shadow-[0_20px_50px_rgba(15,23,42,0.85)]">
+          <div class="w-9 h-9 rounded-full bg-gradient-to-br from-accent to-accent3 grid place-items-center text-sm font-bold text-slate-950">
+            B2
+          </div>
+          <div class="text-xs">
+            <p class="font-semibold text-slate-100">Simulaciones tipo examen</p>
+            <p class="text-slate-400">Timers + scorecards estilo Cambridge</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 
-  <section class="cta-banner container" id="cta">
-    <div>
-      <p class="section-tag">CTA</p>
-      <h2>Listo para abrir el campus?</h2>
-      <p>Activa tu vista demo y avanza en el skill que m&aacute;s impacto tiene en tu score.</p>
-    </div>
-    <div class="cta-actions">
-      <button class="btn primary campus-link" type="button" data-campus-target="vista 1/index.html">Abrir demo</button>
-      <button class="btn ghost campus-link" type="button" data-campus-target="vista 4/index.html">Ver Speaking live</button>
-    </div>
-  </section>
+      <!-- BENEFICIOS -->
+      <section class="section container mt-16 lg:mt-24" id="benefits">
+  <!-- FONDO ORBITA -->
+  <div class="relative overflow-hidden rounded-[32px] border border-slate-700/60 bg-gradient-to-br from-slate-950/95 via-slate-900/95 to-slate-950/95 px-4 sm:px-6 lg:px-10 py-12 lg:py-16 shadow-[0_28px_80px_rgba(15,23,42,0.95)]">
+    <div class="pointer-events-none absolute -top-32 -left-24 w-80 h-80 bg-[radial-gradient(circle,_rgba(56,189,248,0.35)_0%,transparent_60%)] opacity-70 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-40 right-0 w-96 h-96 bg-[radial-gradient(circle,_rgba(168,85,247,0.35)_0%,transparent_60%)] opacity-80 blur-3xl"></div>
+    <div class="pointer-events-none absolute inset-0 border border-white/5 rounded-[32px] opacity-30"></div>
 
-  <section class="preview container" id="preview">
-    <div class="preview-content">
-      <div class="preview-pills">
-        <span class="preview-pill primary">Actualizado 2025</span>
-        <span class="preview-pill secondary">+1,200 estudiantes activos</span>
-      </div>
-      <h2>&Uacute;nete al campus que eleva tu Cambridge B2</h2>
-      <p class="preview-copy">
-        Feedback guiado, simulaciones tipo Cambridge y plantillas accionables desde el d&iacute;a uno. Vive la misma experiencia que utilizan nuestros candidatos con score 180+.
+    <!-- HEADLINE -->
+    <div class="relative section-head max-w-3xl mx-auto text-center flex flex-col gap-2">
+      <p class="section-tag">Beneficios clave</p>
+      <h2 class="text-3xl lg:text-4xl font-semibold">
+        Skilling acelerado, formato Cambridge
+      </h2>
+      <p class="section-note text-slate-300/90">
+        Diseñado con coaches certificados, IA y playbooks accionables desde la primera semana.
       </p>
-      <ul class="preview-list">
-        <li>
-          <span class="preview-icon" aria-hidden="true">🧠</span>
-          <div>
-            <strong>Tracks vivos por skill</strong>
-            <p>Roadmaps Reading, Writing, Listening y Speaking con entregables cada semana.</p>
+    </div>
+
+    <!-- GRID 3D -->
+    <div class="relative mt-12">
+      <div class="benefit-grid grid gap-8 md:grid-cols-3">
+        <!-- Card 1 -->
+        <article
+          class="benefit-card group flex flex-col items-center text-center gap-4 rounded-3xl border border-sky-500/30 bg-slate-900/70/60 px-5 pt-6 pb-5 
+                 shadow-[0_18px_60px_rgba(8,47,73,0.85)] 
+                 hover:shadow-[0_28px_90px_rgba(8,47,73,1)] 
+                 hover:-translate-y-3 hover:-rotate-1 transition-transform duration-300"
+        >
+          <!-- Label flotante -->
+          <div class="inline-flex items-center gap-2 rounded-full bg-sky-500/15 border border-sky-500/40 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-sky-100">
+            <span class="w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_10px_rgba(56,189,248,1)]"></span>
+            Labs inmersivos
           </div>
-        </li>
-        <li>
-          <span class="preview-icon" aria-hidden="true">🎛️</span>
-          <div>
-            <strong>Simulaciones reales</strong>
-            <p>M&eacute;tricas de time management + checklists descargables para cada mock.</p>
+
+          <!-- Imagen 3D flotante -->
+          <div class="benefit-thumb-shell relative mt-1">
+            <div class="absolute inset-0 translate-y-4 scale-110 bg-[radial-gradient(circle,_rgba(56,189,248,0.45),transparent_65%)] opacity-70 blur-2xl -z-10"></div>
+            <img
+              class="benefit-thumb large relative mx-auto drop-shadow-[0_28px_55px_rgba(15,23,42,0.95)] group-hover:translate-y-[-4px] group-hover:scale-[1.03] group-hover:rotate-1 transition-transform duration-300"
+              src="https://i.ibb.co/gF3MFvW8/Chat-GPT-Image-20-nov-2025-14-54-57.png"
+              alt="Ilustración 3D de laboratorio digital"
+            >
           </div>
-        </li>
-        <li>
-          <span class="preview-icon" aria-hidden="true">🤖</span>
-          <div>
-            <strong>Feedback asistido por IA</strong>
-            <p>Prompts guiados para Speaking y Writing con observaciones inmediatas.</p>
+
+          <div class="space-y-1">
+            <h3 class="text-xl font-semibold">Labs inmersivos</h3>
+            <p class="text-slate-200/95 text-sm">
+              Videos guiados + PDFs navegables. Cada bloque cierra con entregable y checklist accionable.
+            </p>
           </div>
-        </li>
-      </ul>
-      <div class="preview-metrics">
-        <div class="metric-card">
-          <span class="metric-label">Aprobaci&oacute;n</span>
-          <p class="metric-value">95%</p>
-          <small>promedio en &uacute;ltimos mocks</small>
-        </div>
-        <div class="metric-card">
-          <span class="metric-label">Recursos</span>
-          <p class="metric-value">60+</p>
-          <small>entre PDFs, videos y checklists</small>
-        </div>
-        <div class="metric-card">
-          <span class="metric-label">Clases live</span>
-          <p class="metric-value">8/mes</p>
-          <small>con coaches certificados</small>
-        </div>
-      </div>
-      <div class="preview-icons">
-        <div class="icon-card">
-          <span class="icon-card-icon">🧪</span>
-          <div>
-            <p>Labs inmersivos</p>
-            <small>PDFs + walkthroughs guiados</small>
+          <span class="pill blue mt-1">PDF + Video</span>
+        </article>
+
+        <!-- Card 2 -->
+        <article
+          class="benefit-card group flex flex-col items-center text-center gap-4 rounded-3xl border border-fuchsia-500/35 bg-slate-900/70 px-5 pt-6 pb-5 
+                 shadow-[0_18px_60px_rgba(88,28,135,0.85)] 
+                 hover:shadow-[0_28px_90px_rgba(88,28,135,1)] 
+                 hover:-translate-y-3 hover:rotate-1 transition-transform duration-300"
+        >
+          <!-- Label flotante -->
+          <div class="inline-flex items-center gap-2 rounded-full bg-fuchsia-500/15 border border-fuchsia-500/40 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-fuchsia-100">
+            <span class="w-1.5 h-1.5 rounded-full bg-fuchsia-400 shadow-[0_0_10px_rgba(217,70,239,1)]"></span>
+            AI Coach
           </div>
-        </div>
-        <div class="icon-card">
-          <span class="icon-card-icon">🤝</span>
-          <div>
-            <p>AI Coach</p>
-            <small>Feedback instant&aacute;neo</small>
+
+          <!-- Imagen 3D flotante -->
+          <div class="benefit-thumb-shell relative mt-1">
+            <div class="absolute inset-0 translate-y-4 scale-110 bg-[radial-gradient(circle,_rgba(217,70,239,0.5),transparent_65%)] opacity-75 blur-2xl -z-10"></div>
+            <img
+              class="benefit-thumb large relative mx-auto drop-shadow-[0_28px_55px_rgba(76,29,149,0.95)] group-hover:translate-y-[-4px] group-hover:scale-[1.03] group-hover:-rotate-1 transition-transform duration-300"
+              src="https://i.ibb.co/Myjd8yR0/3de464cd-f5e5-4a46-8b9e-abb545deca75.png"
+              alt="Ilustración 3D de asistente IA"
+            >
           </div>
-        </div>
-        <div class="icon-card">
-          <span class="icon-card-icon">🎙️</span>
-          <div>
-            <p>Speaking Rooms</p>
-            <small>Sim partner & examiner view</small>
+
+          <div class="space-y-1">
+            <h3 class="text-xl font-semibold">Feedback asistido</h3>
+            <p class="text-slate-200/95 text-sm">
+              Prompts calibrados para Speaking y Writing con retro inmediata, ejemplos top y rubricas claras.
+            </p>
           </div>
-        </div>
-      </div>
-      <div class="preview-actions">
-        <button class="btn primary campus-link" type="button" data-campus-target="vista 1/index.html">Explorar campus</button>
-        <button class="btn ghost campus-link" type="button" data-campus-target="vista 3/index.html">Probar una demo</button>
+          <span class="pill purple mt-1">AI Coach</span>
+        </article>
+
+        <!-- Card 3 -->
+        <article
+          class="benefit-card group flex flex-col items-center text-center gap-4 rounded-3xl border border-cyan-500/35 bg-slate-900/70 px-5 pt-6 pb-5 
+                 shadow-[0_18px_60px_rgba(8,47,73,0.9)] 
+                 hover:shadow-[0_28px_90px_rgba(8,47,73,1)] 
+                 hover:-translate-y-3 hover:-rotate-1 transition-transform duration-300"
+        >
+          <!-- Label flotante -->
+          <div class="inline-flex items-center gap-2 rounded-full bg-cyan-500/15 border border-cyan-500/40 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-cyan-100">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,1)]"></span>
+            Sim tipo examen
+          </div>
+
+          <!-- Imagen 3D flotante -->
+          <div class="benefit-thumb-shell relative mt-1">
+            <div class="absolute inset-0 translate-y-4 scale-110 bg-[radial-gradient(circle,_rgba(34,211,238,0.5),transparent_65%)] opacity-80 blur-2xl -z-10"></div>
+            <img
+              class="benefit-thumb large relative mx-auto drop-shadow-[0_28px_55px_rgba(8,47,73,0.98)] group-hover:translate-y-[-4px] group-hover:scale-[1.03] group-hover:rotate-1 transition-transform duration-300"
+              src="https://i.ibb.co/rRFhpb8J/f5cca8c8-a956-43b3-a010-e166bec6949a-removebg-preview.png"
+              alt="Ilustración 3D de simulación de examen"
+            >
+          </div>
+
+          <div class="space-y-1">
+            <h3 class="text-xl font-semibold">Sim tipo examen</h3>
+            <p class="text-slate-200/95 text-sm">
+              Timers, scoring y scorecards para controlar tu pace y bajar errores antes del examen real.
+            </p>
+          </div>
+          <span class="pill cyan mt-1">Sim real</span>
+        </article>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 
-  <main class="catalog container" id="catalogo">
-    <section class="catalog-head">
+      <!-- CTA -->
+      <section class="cta-banner container flex justify-between items-center gap-4 flex-wrap text-center sm:text-left" id="cta">
+        <div class="space-y-1 max-w-xl">
+          <p class="section-tag">CTA</p>
+          <h2 class="text-3xl font-semibold">
+            ¿Listo para abrir el campus?
+          </h2>
+          <p class="text-slate-100/90 text-sm sm:text-base">
+            Activa tu vista demo y avanza en el skill que más impacto tiene en tu score.
+          </p>
+        </div>
+        <div class="cta-actions flex gap-3 flex-wrap justify-center">
+          <button
+            class="btn primary campus-link"
+            type="button"
+            data-campus-target="vista 1/index.html"
+          >
+            Abrir demo
+          </button>
+          <button
+            class="btn ghost campus-link"
+            type="button"
+            data-campus-target="vista 4/index.html"
+          >
+            Ver Speaking live
+          </button>
+        </div>
+      </section>
+
+      <!-- PREVIEW / EXPERIENCIA -->
+      <section class="preview container mt-16 lg:mt-20" id="preview">
+  <div class="relative overflow-hidden rounded-[28px] border border-slate-700/70 bg-gradient-to-br from-slate-950/95 via-slate-900/95 to-slate-950/95 px-5 sm:px-7 lg:px-9 py-8 lg:py-9 shadow-[0_26px_80px_rgba(15,23,42,0.95)]">
+    <!-- Glows -->
+    <div class="pointer-events-none absolute -top-32 left-0 w-64 h-64 bg-[radial-gradient(circle,_rgba(56,189,248,0.35),transparent_60%)] opacity-70 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-32 right-4 w-72 h-72 bg-[radial-gradient(circle,_rgba(168,85,247,0.4),transparent_60%)] opacity-80 blur-3xl"></div>
+    <div class="pointer-events-none absolute inset-0 border border-white/5 rounded-[28px] opacity-30"></div>
+
+    <div class="relative grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] items-start">
+      <!-- COLUMNA IZQUIERDA -->
+      <div class="space-y-6">
+        <!-- Pills -->
+        <div class="preview-pills flex flex-wrap gap-2">
+          <span class="preview-pill primary">Actualizado 2025</span>
+          <span class="preview-pill secondary">+1,200 estudiantes activos</span>
+        </div>
+
+        <!-- Texto principal -->
+        <div class="space-y-3 max-w-xl">
+          <h2 class="text-2xl sm:text-3xl lg:text-[1.9rem] font-semibold">
+            Únete al campus que eleva tu Cambridge B2
+          </h2>
+          <p class="preview-copy text-slate-200/90 text-sm sm:text-base">
+            Feedback guiado, simulaciones tipo Cambridge y plantillas accionables desde el día uno, para construir un score estable de <span class="font-semibold text-accent2">180+</span>.
+          </p>
+        </div>
+
+        <!-- Lista con microinteracciones -->
+        <ul class="preview-list flex flex-col gap-3 text-sm">
+          <li class="group flex gap-3 items-start rounded-2xl border border-slate-700/70 bg-slate-900/60 px-3.5 py-3 hover:border-sky-500/60 hover:bg-slate-900/90 hover:-translate-y-[2px] transition">
+            <span class="preview-icon mt-0.5 text-xs" aria-hidden="true">★</span>
+            <div>
+              <strong class="block text-sm">Tracks vivos por skill</strong>
+              <p class="text-slate-300/90 text-xs sm:text-[13px]">
+                Roadmaps Reading, Writing, Listening y Speaking con entregables semanales y foco en progreso real.
+              </p>
+            </div>
+          </li>
+          <li class="group flex gap-3 items-start rounded-2xl border border-slate-700/70 bg-slate-900/60 px-3.5 py-3 hover:border-cyan-500/60 hover:bg-slate-900/90 hover:-translate-y-[2px] transition">
+            <span class="preview-icon mt-0.5 text-xs" aria-hidden="true">▶</span>
+            <div>
+              <strong class="block text-sm">Simulaciones reales</strong>
+              <p class="text-slate-300/90 text-xs sm:text-[13px]">
+                Métricas de time management, scorecards y checklists descargables para cada mock.
+              </p>
+            </div>
+          </li>
+          <li class="group flex gap-3 items-start rounded-2xl border border-slate-700/70 bg-slate-900/60 px-3.5 py-3 hover:border-fuchsia-500/60 hover:bg-slate-900/90 hover:-translate-y-[2px] transition">
+            <span class="preview-icon mt-0.5 text-xs" aria-hidden="true">⚡</span>
+            <div>
+              <strong class="block text-sm">Feedback asistido por IA</strong>
+              <p class="text-slate-300/90 text-xs sm:text-[13px]">
+                Prompts guiados para Speaking y Writing con observaciones inmediatas y ejemplos modelo.
+              </p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Acciones -->
+        <div class="preview-actions flex flex-wrap gap-3 pt-1">
+          <button
+            class="btn primary campus-link"
+            type="button"
+            data-campus-target="vista 1/index.html"
+          >
+            Explorar campus
+          </button>
+          <button
+            class="btn ghost campus-link"
+            type="button"
+            data-campus-target="vista 3/index.html"
+          >
+            Probar una demo
+          </button>
+        </div>
+      </div>
+
+      <!-- COLUMNA DERECHA: MÉTRICAS + ICONOS -->
+      <div class="space-y-5 lg:space-y-6">
+        <!-- Métricas compactas -->
+        <div class="preview-metrics grid sm:grid-cols-3 lg:grid-cols-1 gap-3">
+          <div class="metric-card group">
+            <span class="metric-label">Aprobación</span>
+            <p class="metric-value">95%</p>
+            <small>promedio en últimos mocks</small>
+          </div>
+          <div class="metric-card group">
+            <span class="metric-label">Recursos</span>
+            <p class="metric-value">60+</p>
+            <small>PDFs, videos y checklists</small>
+          </div>
+          <div class="metric-card group">
+            <span class="metric-label">Clases live</span>
+            <p class="metric-value">8/mes</p>
+            <small>con coaches certificados</small>
+          </div>
+        </div>
+
+        <!-- Icon cards con hover -->
+        <div class="preview-icons grid sm:grid-cols-3 lg:grid-cols-1 gap-3 text-sm">
+          <div class="icon-card group flex items-center gap-3">
+            <span class="icon-card-icon group-hover:scale-110 group-hover:rotate-3 transition">&#9733;</span>
+            <div>
+              <p>Labs inmersivos</p>
+              <small>PDFs + walkthroughs guiados</small>
+            </div>
+          </div>
+          <div class="icon-card group flex items-center gap-3">
+            <span class="icon-card-icon group-hover:scale-110 group-hover:-rotate-3 transition">&#9881;</span>
+            <div>
+              <p>AI Coach</p>
+              <small>Feedback instantáneo</small>
+            </div>
+          </div>
+          <div class="icon-card group flex items-center gap-3">
+            <span class="icon-card-icon group-hover:scale-110 group-hover:rotate-1 transition">&#9658;</span>
+            <div>
+              <p>Speaking Rooms</p>
+              <small>Sim partner &amp; examiner view</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      <!-- CATÁLOGO -->
+      <section class="catalog container mt-16 lg:mt-24" id="catalogo">
+  <!-- CONTENEDOR GALÁCTICO -->
+  <div class="relative overflow-hidden rounded-[32px] border border-slate-700/70 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 px-4 sm:px-6 lg:px-10 py-10 lg:py-14 shadow-[0_30px_100px_rgba(15,23,42,0.95)]">
+    <!-- Glows -->
+    <div class="pointer-events-none absolute -top-40 left-0 w-80 h-80 bg-[radial-gradient(circle,_rgba(56,189,248,0.4)_0%,transparent_60%)] opacity-80 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-40 right-0 w-96 h-96 bg-[radial-gradient(circle,_rgba(168,85,247,0.45)_0%,transparent_60%)] opacity-80 blur-3xl"></div>
+    <div class="pointer-events-none absolute inset-0 border border-white/5 rounded-[32px] opacity-30"></div>
+
+    <!-- HEADER -->
+    <header class="relative catalog-head flex flex-wrap items-end justify-between gap-4">
       <div>
         <p class="section-tag">Skill tracks</p>
-        <h2>Selecciona una vista</h2>
+        <h2 class="text-2xl lg:text-3xl font-semibold">Selecciona una vista</h2>
+        <p class="section-note mt-1 text-slate-300/90 text-sm">
+          Cada “tile” es un módulo clave dentro del campus Cambridge B2.
+        </p>
       </div>
-      <span class="section-note">Contenido actualizado a 2025</span>
-    </section>
+      <div class="flex flex-col items-end gap-2 text-right">
+        <span class="section-note text-xs uppercase tracking-[0.22em] text-slate-400">
+          Contenido actualizado a 2025
+        </span>
+        <!-- Cintillo skills -->
+        <div class="inline-flex flex-wrap items-center gap-1.5 rounded-full bg-slate-900/80 border border-slate-600/60 px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] text-slate-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_10px_rgba(56,189,248,1)]"></span>
+          Reading · Writing · Listening · Speaking · Grammar
+        </div>
+      </div>
+    </header>
 
-    <div class="card-grid">
-      <article class="card" style="--cover:url('https://i.ibb.co/dsxCndvc/e273b0f1-be24-4b19-9c22-5d0d29b582d1.png')">
-        <div class="card-badges">
-          <span class="pill blue">Nuevo</span>
-          <span class="pill purple">PDF + Video</span>
-        </div>
-        <div class="card-cover"></div>
-        <h3>Reading Lab</h3>
-        <p>Roadmap para mastering comprehension y time management en el paper 1.</p>
-        <div class="card-meta">
-          <span>6 bloques &middot; 12 recursos</span>
-          <a href="vista 1/index.html" class="btn small campus-link" data-campus-target="vista 1/index.html">Abrir vista</a>
-        </div>
-      </article>
+    <!-- GRID TESOROS -->
+    <div class="relative mt-10">
+      <div class="card-grid grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Reading Lab -->
+        <article
+          class="card group cursor-pointer relative overflow-hidden rounded-3xl border border-sky-500/40 bg-slate-900/80 px-4 pt-4 pb-4
+                 shadow-[0_22px_80px_rgba(8,47,73,0.9)]
+                 hover:shadow-[0_32px_110px_rgba(8,47,73,1)]
+                 hover:-translate-y-3 hover:-rotate-1 transition-transform duration-300"
+          style="--cover:url('https://i.ibb.co/dsxCndvc/e273b0f1-be24-4b19-9c22-5d0d29b582d1.png')"
+        >
+          <!-- Glow interno -->
+          <div class="pointer-events-none absolute inset-x-[-40%] top-[-40%] h-40 bg-[radial-gradient(circle,_rgba(56,189,248,0.45),transparent_60%)] opacity-60 blur-3xl"></div>
 
-      <article class="card" style="--cover:url('https://i.ibb.co/99mqkWMy/Chat-GPT-Image-19-nov-2025-18-32-34.png')">
-        <div class="card-badges">
-          <span class="pill cyan">Pr&aacute;cticas</span>
-          <span class="pill purple">Feedback</span>
-        </div>
-        <div class="card-cover"></div>
-        <h3>Writing Studio</h3>
-        <p>Plantillas, modelos y correcciones guiadas para cada parte del Writing.</p>
-        <div class="card-meta">
-          <span>3 bloques &middot; 8 recursos</span>
-          <a href="vista 2/index.html" class="btn small campus-link" data-campus-target="vista 2/index.html">Abrir vista</a>
-        </div>
-      </article>
+          <div class="relative flex flex-col gap-3 h-full">
+            <!-- Badges -->
+            <div class="card-badges flex items-center gap-2">
+              <span class="pill blue">Nuevo</span>
+              <span class="pill purple">PDF + Video</span>
+            </div>
 
-      <article class="card" style="--cover:url('https://i.ibb.co/jPK8ZQDL/Chat-GPT-Image-19-nov-2025-18-43-39.png')">
-        <div class="card-badges">
-          <span class="pill blue">Listening</span>
-          <span class="pill cyan">Sim</span>
-        </div>
-        <div class="card-cover"></div>
-        <h3>Listening Arena</h3>
-        <p>Clases guiadas con audios reales y ejercicios tipo Cambridge.</p>
-        <div class="card-meta">
-          <span>4 bloques &middot; 10 recursos</span>
-          <a href="vista 3/index.html" class="btn small campus-link" data-campus-target="vista 3/index.html">Abrir vista</a>
-        </div>
-      </article>
+            <!-- Cover -->
+            <div class="card-cover relative mt-1 rounded-2xl overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-slate-900/40"></div>
+            </div>
 
-      <article class="card" style="--cover:url('https://i.ibb.co/4gPtj8xn/Chat-GPT-Image-19-nov-2025-18-28-33.png')">
-        <div class="card-badges">
-          <span class="pill purple">Speaking</span>
-          <span class="pill blue">Pro Tips</span>
-        </div>
-        <div class="card-cover"></div>
-        <h3>Speaking Room</h3>
-        <p>Simulaciones guiadas con examiner feedback y videos demostrativos.</p>
-        <div class="card-meta">
-          <span>4 bloques &middot; 9 recursos</span>
-          <a href="vista 4/index.html" class="btn small campus-link" data-campus-target="vista 4/index.html">Abrir vista</a>
-        </div>
-      </article>
+            <!-- Texto -->
+            <div class="space-y-1 mt-2">
+              <h3 class="text-xl font-semibold flex items-center gap-2">
+                Reading Lab
+                <span class="inline-flex items-center rounded-full bg-sky-500/15 border border-sky-500/40 px-2 py-[2px] text-[10px] uppercase tracking-[0.18em] text-sky-100">
+                  Paper 1
+                </span>
+              </h3>
+              <p class="text-slate-200/90 text-sm">
+                Roadmap para mastering comprehension y time management en el paper 1.
+              </p>
+            </div>
 
-      <article class="card" style="--cover:url('https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80')">
-        <div class="card-badges">
-          <span class="pill cyan">Planner</span>
-          <span class="pill blue">Tracking</span>
-        </div>
-        <div class="card-cover"></div>
-        <h3>Study Dashboard</h3>
-        <p>Plan semanal, h&aacute;bitos y seguimiento para llegar confiado al examen.</p>
-        <div class="card-meta">
-          <span>5 bloques &middot; 6 recursos</span>
-          <a href="vista 5/index.html" class="btn small campus-link" data-campus-target="vista 5/index.html">Abrir vista</a>
-        </div>
-      </article>
+            <!-- Meta -->
+            <div class="card-meta mt-3 flex items-center justify-between gap-3 text-xs text-slate-300/90">
+              <span>6 bloques · 12 recursos</span>
+              <a
+                href="vista 1/index.html"
+                class="btn small campus-link group-hover:translate-x-0.5 transition-transform"
+                data-campus-target="vista 1/index.html"
+              >
+                Abrir vista
+              </a>
+            </div>
+          </div>
+        </article>
 
-      <article class="card" style="--cover:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80')">
-        <div class="card-badges">
-          <span class="pill purple">Grammar</span>
-          <span class="pill cyan">Core</span>
-        </div>
-        <div class="card-cover"></div>
-        <h3>Essential Grammar</h3>
-        <p>Laboratorio express para reforzar estructuras clave antes de cada mock.</p>
-        <div class="card-meta">
-          <span>4 bloques &middot; 8 recursos</span>
-          <a href="vista 6/index.html" class="btn small campus-link" data-campus-target="vista 6/index.html">Abrir vista</a>
-        </div>
-      </article>
+        <!-- Writing Studio -->
+        <article
+          class="card group cursor-pointer relative overflow-hidden rounded-3xl border border-fuchsia-500/40 bg-slate-900/80 px-4 pt-4 pb-4
+                 shadow-[0_22px_80px_rgba(88,28,135,0.9)]
+                 hover:shadow-[0_32px_110px_rgba(88,28,135,1)]
+                 hover:-translate-y-3 hover:rotate-1 transition-transform duration-300"
+          style="--cover:url('https://i.ibb.co/99mqkWMy/Chat-GPT-Image-19-nov-2025-18-32-34.png')"
+        >
+          <div class="pointer-events-none absolute inset-x-[-40%] top-[-40%] h-40 bg-[radial-gradient(circle,_rgba(168,85,247,0.5),transparent_60%)] opacity-70 blur-3xl"></div>
 
-      <article class="card" style="--cover:url('https://images.unsplash.com/photo-1518085250887-2f903c200fee?auto=format&fit=crop&w=1200&q=80')">
-        <div class="card-badges">
-          <span class="pill purple">Bonus</span>
-          <span class="pill blue">Live</span>
-        </div>
-        <div class="card-cover"></div>
-        <h3>Masterclasses</h3>
-        <p>Sesiones en vivo y challenges especiales para pulir cada skill.</p>
-        <div class="card-meta">
-          <span>Eventos mensuales</span>
-          <a href="https://meet.google.com" target="_blank" rel="noopener" class="btn small">Reservar</a>
-        </div>
-      </article>
+          <div class="relative flex flex-col gap-3 h-full">
+            <div class="card-badges flex items-center gap-2">
+              <span class="pill cyan">Prácticas</span>
+              <span class="pill purple">Feedback</span>
+            </div>
+
+            <div class="card-cover relative mt-1 rounded-2xl overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-slate-900/40"></div>
+            </div>
+
+            <div class="space-y-1 mt-2">
+              <h3 class="text-xl font-semibold flex items-center gap-2">
+                Writing Studio
+                <span class="inline-flex items-center rounded-full bg-fuchsia-500/15 border border-fuchsia-500/40 px-2 py-[2px] text-[10px] uppercase tracking-[0.18em] text-fuchsia-100">
+                  Modelos + plantillas
+                </span>
+              </h3>
+              <p class="text-slate-200/90 text-sm">
+                Plantillas, modelos y correcciones guiadas para cada parte del Writing.
+              </p>
+            </div>
+
+            <div class="card-meta mt-3 flex items-center justify-between gap-3 text-xs text-slate-300/90">
+              <span>3 bloques · 8 recursos</span>
+              <a
+                href="vista 2/index.html"
+                class="btn small campus-link group-hover:translate-x-0.5 transition-transform"
+                data-campus-target="vista 2/index.html"
+              >
+                Abrir vista
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Listening Arena -->
+        <article
+          class="card group cursor-pointer relative overflow-hidden rounded-3xl border border-cyan-500/40 bg-slate-900/80 px-4 pt-4 pb-4
+                 shadow-[0_22px_80px_rgba(8,47,73,0.9)]
+                 hover:shadow-[0_32px_110px_rgba(8,47,73,1)]
+                 hover:-translate-y-3 hover:-rotate-1 transition-transform duration-300"
+          style="--cover:url('https://i.ibb.co/jPK8ZQDL/Chat-GPT-Image-19-nov-2025-18-43-39.png')"
+        >
+          <div class="pointer-events-none absolute inset-x-[-40%] top-[-40%] h-40 bg-[radial-gradient(circle,_rgba(34,211,238,0.5),transparent_60%)] opacity-70 blur-3xl"></div>
+
+          <div class="relative flex flex-col gap-3 h-full">
+            <div class="card-badges flex items-center gap-2">
+              <span class="pill blue">Listening</span>
+              <span class="pill cyan">Sim</span>
+            </div>
+
+            <div class="card-cover relative mt-1 rounded-2xl overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-slate-900/40"></div>
+            </div>
+
+            <div class="space-y-1 mt-2">
+              <h3 class="text-xl font-semibold flex items-center gap-2">
+                Listening Arena
+                <span class="inline-flex items-center rounded-full bg-cyan-500/15 border border-cyan-500/40 px-2 py-[2px] text-[10px] uppercase tracking-[0.18em] text-cyan-100">
+                  Audios reales
+                </span>
+              </h3>
+              <p class="text-slate-200/90 text-sm">
+                Clases guiadas con audios reales y ejercicios tipo Cambridge.
+              </p>
+            </div>
+
+            <div class="card-meta mt-3 flex items-center justify-between gap-3 text-xs text-slate-300/90">
+              <span>4 bloques · 10 recursos</span>
+              <a
+                href="vista 3/index.html"
+                class="btn small campus-link group-hover:translate-x-0.5 transition-transform"
+                data-campus-target="vista 3/index.html"
+              >
+                Abrir vista
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Speaking Room -->
+        <article
+          class="card group cursor-pointer relative overflow-hidden rounded-3xl border border-purple-500/45 bg-slate-900/80 px-4 pt-4 pb-4
+                 shadow-[0_22px_80px_rgba(76,29,149,0.9)]
+                 hover:shadow-[0_32px_110px_rgba(76,29,149,1)]
+                 hover:-translate-y-3 hover:rotate-1 transition-transform duration-300"
+          style="--cover:url('https://i.ibb.co/4gPtj8xn/Chat-GPT-Image-19-nov-2025-18-28-33.png')"
+        >
+          <div class="pointer-events-none absolute inset-x-[-40%] top-[-40%] h-40 bg-[radial-gradient(circle,_rgba(139,92,246,0.55),transparent_60%)] opacity-80 blur-3xl"></div>
+
+          <div class="relative flex flex-col gap-3 h-full">
+            <div class="card-badges flex items-center gap-2">
+              <span class="pill purple">Speaking</span>
+              <span class="pill blue">Pro Tips</span>
+            </div>
+
+            <div class="card-cover relative mt-1 rounded-2xl overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-slate-900/40"></div>
+            </div>
+
+            <div class="space-y-1 mt-2">
+              <h3 class="text-xl font-semibold flex items-center gap-2">
+                Speaking Room
+                <span class="inline-flex items-center rounded-full bg-purple-500/15 border border-purple-500/40 px-2 py-[2px] text-[10px] uppercase tracking-[0.18em] text-purple-100">
+                  Examiner view
+                </span>
+              </h3>
+              <p class="text-slate-200/90 text-sm">
+                Simulaciones guiadas con examiner feedback y videos demostrativos.
+              </p>
+            </div>
+
+            <div class="card-meta mt-3 flex items-center justify-between gap-3 text-xs text-slate-300/90">
+              <span>4 bloques · 9 recursos</span>
+              <a
+                href="vista 4/index.html"
+                class="btn small campus-link group-hover:translate-x-0.5 transition-transform"
+                data-campus-target="vista 4/index.html"
+              >
+                Abrir vista
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Study Dashboard -->
+        <article
+          class="card group cursor-pointer relative overflow-hidden rounded-3xl border border-emerald-500/35 bg-slate-900/80 px-4 pt-4 pb-4
+                 shadow-[0_22px_80px_rgba(6,78,59,0.9)]
+                 hover:shadow-[0_32px_110px_rgba(6,78,59,1)]
+                 hover:-translate-y-3 hover:-rotate-1 transition-transform duration-300"
+          style="--cover:url('https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80')"
+        >
+          <div class="pointer-events-none absolute inset-x-[-40%] top-[-40%] h-40 bg-[radial-gradient(circle,_rgba(16,185,129,0.5),transparent_60%)] opacity-75 blur-3xl"></div>
+
+          <div class="relative flex flex-col gap-3 h-full">
+            <div class="card-badges flex items-center gap-2">
+              <span class="pill cyan">Planner</span>
+              <span class="pill blue">Tracking</span>
+            </div>
+
+            <div class="card-cover relative mt-1 rounded-2xl overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-slate-900/40"></div>
+            </div>
+
+            <div class="space-y-1 mt-2">
+              <h3 class="text-xl font-semibold flex items-center gap-2">
+                Study Dashboard
+                <span class="inline-flex items-center rounded-full bg-emerald-500/15 border border-emerald-500/40 px-2 py-[2px] text-[10px] uppercase tracking-[0.18em] text-emerald-100">
+                  Planner
+                </span>
+              </h3>
+              <p class="text-slate-200/90 text-sm">
+                Plan semanal, hábitos y seguimiento para llegar confiado al examen.
+              </p>
+            </div>
+
+            <div class="card-meta mt-3 flex items-center justify-between gap-3 text-xs text-slate-300/90">
+              <span>5 bloques · 6 recursos</span>
+              <a
+                href="vista 5/index.html"
+                class="btn small campus-link group-hover:translate-x-0.5 transition-transform"
+                data-campus-target="vista 5/index.html"
+              >
+                Abrir vista
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Essential Grammar -->
+        <article
+          class="card group cursor-pointer relative overflow-hidden rounded-3xl border border-amber-500/40 bg-slate-900/80 px-4 pt-4 pb-4
+                 shadow-[0_22px_80px_rgba(146,64,14,0.9)]
+                 hover:shadow-[0_32px_110px_rgba(146,64,14,1)]
+                 hover:-translate-y-3 hover:rotate-1 transition-transform duration-300"
+          style="--cover:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80')"
+        >
+          <div class="pointer-events-none absolute inset-x-[-40%] top-[-40%] h-40 bg-[radial-gradient(circle,_rgba(245,158,11,0.55),transparent_60%)] opacity-80 blur-3xl"></div>
+
+          <div class="relative flex flex-col gap-3 h-full">
+            <div class="card-badges flex items-center gap-2">
+              <span class="pill purple">Grammar</span>
+              <span class="pill cyan">Core</span>
+            </div>
+
+            <div class="card-cover relative mt-1 rounded-2xl overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-slate-900/40"></div>
+            </div>
+
+            <div class="space-y-1 mt-2">
+              <h3 class="text-xl font-semibold flex items-center gap-2">
+                Essential Grammar
+                <span class="inline-flex items-center rounded-full bg-amber-500/15 border border-amber-500/40 px-2 py-[2px] text-[10px] uppercase tracking-[0.18em] text-amber-100">
+                  Core B2
+                </span>
+              </h3>
+              <p class="text-slate-200/90 text-sm">
+                Laboratorio express para reforzar estructuras clave antes de cada mock.
+              </p>
+            </div>
+
+            <div class="card-meta mt-3 flex items-center justify-between gap-3 text-xs text-slate-300/90">
+              <span>4 bloques · 8 recursos</span>
+              <a
+                href="vista 6/index.html"
+                class="btn small campus-link group-hover:translate-x-0.5 transition-transform"
+                data-campus-target="vista 6/index.html"
+              >
+                Abrir vista
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Masterclasses -->
+        <article
+          class="card group cursor-pointer relative overflow-hidden rounded-3xl border border-indigo-500/45 bg-slate-900/80 px-4 pt-4 pb-4
+                 shadow-[0_22px_80px_rgba(55,48,163,0.9)]
+                 hover:shadow-[0_32px_110px_rgba(55,48,163,1)]
+                 hover:-translate-y-3 hover:-rotate-1 transition-transform duration-300"
+          style="--cover:url('https://images.unsplash.com/photo-1518085250887-2f903c200fee?auto=format&fit=crop&w=1200&q=80')"
+        >
+          <div class="pointer-events-none absolute inset-x-[-40%] top-[-40%] h-40 bg-[radial-gradient(circle,_rgba(79,70,229,0.6),transparent_60%)] opacity-85 blur-3xl"></div>
+
+          <div class="relative flex flex-col gap-3 h-full">
+            <div class="card-badges flex items-center gap-2">
+              <span class="pill purple">Bonus</span>
+              <span class="pill blue">Live</span>
+            </div>
+
+            <div class="card-cover relative mt-1 rounded-2xl overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-900/40"></div>
+            </div>
+
+            <div class="space-y-1 mt-2">
+              <h3 class="text-xl font-semibold flex items-center gap-2">
+                Masterclasses
+                <span class="inline-flex items-center rounded-full bg-indigo-500/15 border border-indigo-500/40 px-2 py-[2px] text-[10px] uppercase tracking-[0.18em] text-indigo-100">
+                  Live events
+                </span>
+              </h3>
+              <p class="text-slate-200/90 text-sm">
+                Sesiones en vivo y challenges especiales para pulir cada skill.
+              </p>
+            </div>
+
+            <div class="card-meta mt-3 flex items-center justify-between gap-3 text-xs text-slate-300/90">
+              <span>Eventos mensuales</span>
+              <a
+                href="https://meet.google.com"
+                target="_blank"
+                rel="noopener"
+                class="btn small group-hover:translate-x-0.5 transition-transform"
+              >
+                Reservar
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
-  </main>
+  </div>
+</section>
 
-  <section class="footer container">
-    <div>
-      <p class="section-tag">Soporte</p>
-      <h2>Cambridge Campus</h2>
-      <p class="section-note">Coaches certificados, IA que acelera feedback y recursos curados para tu 180+.</p>
-    </div>
-    <div class="footer-actions">
-      <button class="btn primary campus-link" type="button" data-campus-target="vista 1/index.html">Entrar al campus</button>
-      <a class="btn ghost" href="mailto:team@cambridgeb2.com">team@cambridgeb2.com</a>
-    </div>
-  </section>
+    </main>
 
+    <!-- FOOTER -->
+    <footer class="footer container mt-16 lg:mt-24 flex justify-between gap-4 flex-wrap items-center border-t border-slate-700/60 pt-8">
+      <div class="space-y-2 max-w-2xl">
+        <p class="section-tag">Soporte</p>
+        <h2 class="text-3xl font-semibold">Cambridge Campus</h2>
+        <p class="section-note">
+          Coaches certificados, IA que acelera feedback y recursos curados para tu 180+.
+        </p>
+      </div>
+      <div class="footer-actions flex gap-3 flex-wrap">
+        <button
+          class="btn primary campus-link"
+          type="button"
+          data-campus-target="vista 1/index.html"
+        >
+          Entrar al campus
+        </button>
+        <a class="btn ghost" href="mailto:team@cambridgeb2.com">team@cambridgeb2.com</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- LOGIN MODAL -->
   <div class="login-modal hidden" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
     <div class="login-card">
       <button class="login-close" id="loginClose" type="button" aria-label="Cerrar ventana" data-login-close>
@@ -354,10 +918,10 @@
           </div>
         </label>
         <label class="login-field">
-          <span>Contrase&ntilde;a</span>
+          <span>Contraseña</span>
           <div class="login-input-shell login-password-shell">
             <input id="loginPass" name="password" type="password" autocomplete="current-password" placeholder="********" required>
-            <button class="login-toggle" id="passwordToggle" type="button" aria-label="Mostrar contrase&ntilde;a">Mostrar</button>
+            <button class="login-toggle" id="passwordToggle" type="button" aria-label="Mostrar contraseña">Mostrar</button>
           </div>
         </label>
         <p class="login-caps" id="capsWarning" aria-live="polite"></p>
@@ -371,137 +935,6 @@
     </div>
   </div>
 
-  <script>
-    (() => {
-      const modal = document.getElementById('loginModal');
-      const form = document.getElementById('loginForm');
-      const closeTargets = document.querySelectorAll('[data-login-close]');
-      const loginCard = document.querySelector('.login-card');
-      const errorBox = document.getElementById('loginError');
-      const successBox = document.getElementById('loginSuccess');
-      const submitBtn = document.getElementById('loginSubmit');
-      const submitLabel = submitBtn?.querySelector('.login-submit-label');
-      const spinner = submitBtn?.querySelector('.login-spinner');
-      const userInput = document.getElementById('loginUser');
-      const passInput = document.getElementById('loginPass');
-      const campusLinks = document.querySelectorAll('[data-campus-target]');
-      const passwordToggle = document.getElementById('passwordToggle');
-      const capsWarning = document.getElementById('capsWarning');
-      const DEFAULT_URL = 'vista 1/index.html';
-      const VALID_USER = 'myenglishbro';
-      const VALID_PASS = 'acelingua';
-      let targetUrl = DEFAULT_URL;
-
-      if (!modal || !form || !userInput || !passInput || !submitBtn) {
-        return;
-      }
-
-      const openModal = (destination) => {
-        targetUrl = destination || DEFAULT_URL;
-        modal.classList.remove('hidden');
-        document.body.classList.add('modal-open');
-        window.setTimeout(() => userInput.focus(), 50);
-      };
-
-      const closeModal = () => {
-        modal.classList.add('hidden');
-        document.body.classList.remove('modal-open');
-        form.reset();
-        errorBox.textContent = '';
-        successBox.textContent = '';
-        if (capsWarning) {
-          capsWarning.textContent = '';
-        }
-        passInput.type = 'password';
-        if (passwordToggle) {
-          passwordToggle.textContent = 'Mostrar';
-        }
-        setLoadingState(false);
-      };
-
-      const setLoadingState = (isLoading) => {
-        submitBtn.disabled = isLoading;
-        if (isLoading) {
-          submitLabel && (submitLabel.textContent = 'Validando...');
-          spinner?.classList.add('visible');
-        } else {
-          submitLabel && (submitLabel.textContent = 'Entrar');
-          spinner?.classList.remove('visible');
-        }
-      };
-
-      const triggerShake = () => {
-        if (!loginCard) return;
-        loginCard.classList.remove('shake');
-        void loginCard.offsetWidth;
-        loginCard.classList.add('shake');
-      };
-
-      campusLinks.forEach((link) => {
-        link.addEventListener('click', (event) => {
-          event.preventDefault();
-          const destination = link.dataset.campusTarget || link.getAttribute('href') || DEFAULT_URL;
-          openModal(destination);
-        });
-      });
-
-      closeTargets.forEach((btn) => {
-        btn.addEventListener('click', (event) => {
-          event.preventDefault();
-          closeModal();
-        });
-      });
-
-      modal.addEventListener('click', (event) => {
-        if (event.target === modal) {
-          closeModal();
-        }
-      });
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
-          closeModal();
-        }
-      });
-
-      passwordToggle?.addEventListener('click', () => {
-        const isHidden = passInput.type === 'password';
-        passInput.type = isHidden ? 'text' : 'password';
-        passwordToggle.textContent = isHidden ? 'Ocultar' : 'Mostrar';
-      });
-
-      const handleCapsWarning = (event) => {
-        if (!capsWarning) return;
-        const isCapsOn = event.getModifierState && event.getModifierState('CapsLock');
-        capsWarning.textContent = isCapsOn ? 'Bloq Mayus activado' : '';
-      };
-
-      passInput.addEventListener('keydown', handleCapsWarning);
-      passInput.addEventListener('keyup', handleCapsWarning);
-      passInput.addEventListener('blur', () => {
-        capsWarning.textContent = '';
-      });
-
-      form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const username = userInput.value.trim();
-        const password = passInput.value.trim();
-
-        if (username === VALID_USER && password === VALID_PASS) {
-          errorBox.textContent = '';
-          successBox.textContent = 'Acceso verificado. Cargando tu vista personalizada...';
-          setLoadingState(true);
-          setTimeout(() => {
-            window.location.href = targetUrl;
-          }, 900);
-        } else {
-          successBox.textContent = '';
-          errorBox.textContent = 'Usuario o contrasena incorrectos. Hint: revisa la guia de onboarding';
-          triggerShake();
-          setLoadingState(false);
-        }
-      });
-    })();
-  </script>
+  <script src="assets/js/home.js" defer></script>
 </body>
 </html>
