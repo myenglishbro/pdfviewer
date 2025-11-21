@@ -201,14 +201,9 @@ body {
 }
 
 .resource-board {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  flex: 1;
   transition: opacity 0.25s ease, max-height 0.35s ease;
   position: relative;
   overflow: visible;
-  padding: 0;
   margin-top: 6px;
   z-index: 1;
 }
@@ -679,10 +674,6 @@ body.sidebar-collapsed .sidebar-toggle .toggle-label {
 
 .viewer-panel {
   min-height: 85vh;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  padding-right: 24px;
 }
 
 .viewer-header h3 {
@@ -994,11 +985,6 @@ body.sidebar-collapsed .sidebar-toggle .toggle-label {
   display: none;
 }
 @media (max-width: 1024px) {
-  .resource-board {
-    max-height: none;
-    overflow: visible;
-  }
-
   .viewer-panel {
     min-height: 60vh;
   }
