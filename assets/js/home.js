@@ -16,6 +16,8 @@
   const DEFAULT_URL = 'vista 1/index.html';
   const VALID_USER = 'myenglishbro';
   const VALID_PASS = 'acelingua';
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileNav = document.getElementById('mobileNav');
   let targetUrl = DEFAULT_URL;
 
   if (!modal || !form || !userInput || !passInput || !submitBtn) {
@@ -127,4 +129,21 @@
       setLoadingState(false);
     }
   });
+
+  // Toggle menú móvil del header
+  if (menuToggle && mobileNav) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = !mobileNav.classList.contains('hidden');
+      mobileNav.classList.toggle('hidden');
+      menuToggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    // Cerrar al hacer click en cualquier link dentro del menú
+    mobileNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
 })();
