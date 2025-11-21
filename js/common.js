@@ -181,15 +181,21 @@
       'group',
       'inline-flex',
       'items-center',
-      'gap-3',
-      'rounded-2xl',
+      'gap-2',
+      'md:gap-3',
+      'rounded-xl',
+      'md:rounded-2xl',
       'border',
       'border-slate-200/80',
       'bg-white/80',
-      'px-4',
-      'py-3',
+      'px-2.5',
+      'py-1.5',
+      'md:px-4',
+      'md:py-3',
       'text-left',
       'text-slate-700',
+      'text-sm',
+      'md:text-base',
       'font-semibold',
       'shadow-lg',
       'shadow-blue-100/80',
@@ -214,7 +220,7 @@
           <path d="M16.25 8l3 4-3 4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
       </span>
-      <span class="toggle-label">
+      <span class="toggle-label hidden sm:flex flex-col leading-tight text-left">
         <span class="toggle-title">Panel lateral</span>
         <span class="toggle-state">Ocultar panel</span>
       </span>
@@ -789,6 +795,4 @@
 
   window.initializeView = initializeView;
 })();
-
-
 
