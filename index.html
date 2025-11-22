@@ -1,126 +1,21 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>PDF Viewer · Vista 1</title>
+  <meta http-equiv="refresh" content="0; url=home.html">
+  <title>Redirigiendo al Home...</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="assets/js/tailwind-config.js"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body data-view="vista1" class="min-h-screen bg-[radial-gradient(circle_at_18%_0%,#fef6ff_0%,#eef2ff_45%,#e2e8f0_100%)] text-slate-900 font-display">
-  <header class="view-navbar">
-    <div class="nav-shell">
-      <a class="brand" href="home.html">
-        <span>B2</span>
-        Cambridge Campus
-      </a>
-      <details class="nav-dropdown">
-        <summary class="nav-toggle" aria-label="Abrir menú de vistas">
-          <span>Vistas</span>
-          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </summary>
-        <div class="nav-menu">
-          <nav class="nav-links" aria-label="Vistas del campus">
-            <a class="nav-link" data-view-link="vista1" href="index.html">
-              Reading Lab
-              <span class="tag">Paper 1</span>
-            </a>
-            <a class="nav-link" data-view-link="vista2" href="vista 2/index.html">
-              Writing Studio
-              <span class="tag">Modelos</span>
-            </a>
-            <a class="nav-link" data-view-link="vista3" href="vista 3/index.html">
-              Listening Arena
-              <span class="tag">Audios</span>
-            </a>
-            <a class="nav-link" data-view-link="vista4" href="vista 4/index.html">
-              Speaking Room
-              <span class="tag">Live</span>
-            </a>
-            <a class="nav-link" data-view-link="vista5" href="vista 5/index.html">
-              Study Dashboard
-              <span class="tag">Planner</span>
-            </a>
-            <a class="nav-link" data-view-link="vista6" href="vista 6/index.html">
-              Essential Grammar
-              <span class="tag">Core</span>
-            </a>
-          </nav>
-        </div>
-      </details>
+<body class="min-h-screen bg-[radial-gradient(circle_at_18%_0%,#fef6ff_0%,#eef2ff_45%,#e2e8f0_100%)] text-slate-900 font-display">
+  <main class="layout grid place-items-center min-h-screen">
+    <div class="resource-panel" style="max-width: 460px;">
+      <div class="view-meta space-y-2">
+        <h2 class="text-2xl font-semibold">Redirigiendo...</h2>
+        <p class="text-slate-600">Si no eres redirigido automáticamente, haz clic en el botón.</p>
+      </div>
+      <a href="home.html" class="nav-link is-active" style="display:inline-flex; margin-top: 12px;">Ir al Home</a>
     </div>
-  </header>
-  <main class="layout grid gap-6 lg:gap-8 grid-cols-1 xl:grid-cols-[320px_minmax(0,1fr)] max-w-6xl mx-auto px-4 lg:px-6 py-6">
-    <section class="resource-panel flex flex-col gap-4">
-      <div class="view-meta space-y-1">
-        <h2 id="viewTitle" class="text-2xl font-semibold">Vista 1</h2>
-        <p id="viewDescription" class="text-slate-600">Selecciona recursos para mostrarlos en el visor PDF.</p>
-      </div>
-      <div id="cardContainer" class="resource-board grid gap-3"></div>
-    </section>
-
-    <section class="viewer-panel flex flex-col gap-4">
-      <div class="viewer-header">
-        <h3 class="text-xl font-semibold">Visualizador principal</h3>
-        <p id="viewerInfo" class="card-meta text-slate-600">Elige un recurso para visualizarlo.</p>
-      </div>
-      <div id="mediaPanel" class="media-panel hidden">
-        <div id="videoPanel" class="media-card video-card hidden">
-          <div class="media-card-head">
-            <div>
-              <p class="media-overline">Video guiado</p>
-              <h4 id="videoTitle">Selecciona un recurso</h4>
-            </div>
-          </div>
-          <div class="video-frame">
-            <iframe
-              id="videoFrame"
-              title="Video complementario"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-        <div id="notesPanel" class="media-card notes-card hidden">
-          <div class="media-card-head">
-            <p class="media-overline">Notas clave</p>
-          </div>
-          <ul id="notesList" class="notes-list"></ul>
-        </div>
-      </div>
-      <div class="viewer-frame">
-        <iframe id="pdfFrame" title="PDF Viewer"></iframe>
-        <button type="button" class="iframe-mask group inline-flex items-center gap-3 text-left">
-          <span class="mask-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="presentation" focusable="false">
-              <path d="M12 12a3 3 0 0 0 3-3V7a3 3 0 0 0-6 0v2a3 3 0 0 0 3 3Z" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M5.5 11.25a1.75 1.75 0 0 1 1.75-1.75h9.5A1.75 1.75 0 0 1 18.5 11.25v6a1.75 1.75 0 0 1-1.75 1.75h-9.5A1.75 1.75 0 0 1 5.5 17.25v-6Z" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <span class="mask-text">
-            <span class="mask-status">Modo seguro</span>
-            <span class="mask-state">Desbloquear visor</span>
-          </span>
-          <span class="mask-hint" aria-hidden="true">
-            <svg viewBox="0 0 20 20" role="presentation" focusable="false">
-              <path d="M7 5l5 5-5 5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-        </button>
-      </div>
-    </section>
   </main>
-
-  <div id="splash" class="splash hidden">
-    <div class="splash-card">
-      <p class="splash-overline" id="splashLabel">Welcome Ace Student</p>
-      <h2 id="splashTitle">Let's practice</h2>
-    </div>
-  </div>
-  <script src="js/common.js"></script>
-  <script src="js/vista1.js"></script>
 </body>
 </html>
