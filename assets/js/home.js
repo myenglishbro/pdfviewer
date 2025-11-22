@@ -14,10 +14,27 @@
   const passwordToggle = document.getElementById('passwordToggle');
   const capsWarning = document.getElementById('capsWarning');
   const DEFAULT_URL = 'vista 1/index.html';
-  const VALID_USER = 'myenglishbro';
-  const VALID_PASS = 'acelingua';
   const menuToggle = document.getElementById('menuToggle');
   const mobileNav = document.getElementById('mobileNav');
+  const userDirectory =
+    Array.isArray(window.campusUsers) && window.campusUsers.length > 0
+      ? window.campusUsers
+      : [{ username: 'myenglishbro', password: 'acelingua', role: 'demo' }];
+  const validateUser =
+    typeof window.findCampusUser === 'function'
+      ? window.findCampusUser
+      : (username, password) => {
+          const normalize = (value) => (value || '').trim().toLowerCase();
+          const user = normalize(username);
+          const pass = (password || '').trim();
+          return (
+            userDirectory.find(
+              (entry) =>
+                normalize(entry.username) === user &&
+                (entry.password || '').trim() === pass
+            ) || null
+          );
+        };
   let targetUrl = DEFAULT_URL;
 
   if (!modal || !form || !userInput || !passInput || !submitBtn) {
@@ -115,12 +132,14 @@
     const username = userInput.value.trim();
     const password = passInput.value.trim();
 
-    if (username === VALID_USER && password === VALID_PASS) {
+    const match = validateUser(username, password);
+
+    if (match) {
       errorBox.textContent = '';
       successBox.textContent = 'Acceso verificado. Cargando tu vista personalizada...';
       setLoadingState(true);
       setTimeout(() => {
-        window.location.href = targetUrl;
+        window.location.href = match.target || match.url || targetUrl;
       }, 900);
     } else {
       successBox.textContent = '';
