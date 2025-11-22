@@ -9,6 +9,50 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body data-view="vista1" class="min-h-screen bg-[radial-gradient(circle_at_18%_0%,#fef6ff_0%,#eef2ff_45%,#e2e8f0_100%)] text-slate-900 font-display">
+  <header class="view-navbar">
+    <div class="nav-shell">
+      <a class="brand" href="../home.html">
+        <span>B2</span>
+        Cambridge Campus
+      </a>
+      <details class="nav-dropdown">
+        <summary class="nav-toggle" aria-label="Abrir menú de vistas">
+          <span>Vistas</span>
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </summary>
+        <div class="nav-menu">
+          <nav class="nav-links" aria-label="Vistas del campus">
+            <a class="nav-link" data-view-link="vista1" href="../index.html">
+              Reading Lab
+              <span class="tag">Paper 1</span>
+            </a>
+            <a class="nav-link" data-view-link="vista2" href="../vista 2/index.html">
+              Writing Studio
+              <span class="tag">Modelos</span>
+            </a>
+            <a class="nav-link" data-view-link="vista3" href="../vista 3/index.html">
+              Listening Arena
+              <span class="tag">Audios</span>
+            </a>
+            <a class="nav-link" data-view-link="vista4" href="../vista 4/index.html">
+              Speaking Room
+              <span class="tag">Live</span>
+            </a>
+            <a class="nav-link" data-view-link="vista5" href="../vista 5/index.html">
+              Study Dashboard
+              <span class="tag">Planner</span>
+            </a>
+            <a class="nav-link" data-view-link="vista6" href="../vista 6/index.html">
+              Essential Grammar
+              <span class="tag">Core</span>
+            </a>
+          </nav>
+        </div>
+      </details>
+    </div>
+  </header>
   <main class="layout grid gap-6 lg:gap-8 grid-cols-1 xl:grid-cols-[320px_minmax(0,1fr)] max-w-6xl mx-auto px-4 lg:px-6 py-6">
     <section class="resource-panel flex flex-col gap-4">
       <div class="view-meta space-y-1">
@@ -80,4 +124,3 @@
   <script src="../js/vista1.js"></script>
 </body>
 </html>
-

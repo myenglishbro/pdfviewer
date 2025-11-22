@@ -26,6 +26,8 @@
   const VIEWED_KEY = 'viewerHistory';
   const COLLAPSE_KEY = 'sidebarCollapsed';
 
+  highlightActiveNav();
+
   if (!titleEl || !descEl || !cardContainer) {
     return;
   }
@@ -155,6 +157,22 @@
   }
 
   attachSliderEvents();
+
+  function highlightActiveNav() {
+    if (!document || !document.body) return;
+    const activeView = document.body.dataset.view || '';
+    if (!activeView) return;
+    const navLinks = document.querySelectorAll('[data-view-link]');
+    navLinks.forEach((link) => {
+      const matches = link.dataset.viewLink === activeView;
+      link.classList.toggle('is-active', matches);
+      if (matches) {
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  }
 
   function readCollapsePreference() {
     try {
