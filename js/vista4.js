@@ -59,17 +59,17 @@
           descripcion: 'PDF ',
           video: 'https://youtu.be/juwYkDYaitk',
           videoTitle: 'Updated 2025',
-           url: 'https://drive.google.com/file/d/17Z4sJ8eNG0yVr1vtvWxuTek6gMKD2hKH/view?usp=sharing',
+           url: 'https://drive.google.com/file/d/1vR43QCIUJi1i6UEUW5GI0Ml2E1LUYXiF/view?usp=sharing',
 
           highlights: [
             {
-              title: 'Part 1: Interview (interlocutor and candidate)',
-              text: 'Part 1 focuses on your ability to talk about topics of general interest, such as your work or studies, how you spend your free time, or your plans for the future — something you are familiar with. In this part, the interlocutor asks each candidate two or three questions. You are expected to listen to what the other candidate says as well as the questions asked. The reason is that you might be asked the same question (e.g., “And what about you?”). However, this part does not involve direct communication between candidates. Part 1 is about two minutes long.',
+              title: 'Part 2: Describing photos (two test-takers)',
+              text: 'This part tests your ability to describe pictures, to talk about similarities and differences between the pictures, and to express your opinion on the question. In this part of the exam, there are usually two test-takers — Candidate A and Candidate B (however, sometimes you might be in a group with two other candidates). Candidate A goes first; they receive two pictures from the interlocutor and a question they have to answer. The question is written on the page with the two pictures. It can be about how people in the pictures might be feeling, what the advantages and disadvantages of the situation in each picture could be, and so on. Candidate A gets about five seconds to prepare and one minute to answer the question.',
             },
-            'The key is to keep your answers fairly short — two or three sentences should be enough. Stick to the topic of the question. Your answers should sound natural — do not use any memorised responses. Such answers are easy to spot and can often lead to a lower mark. Rehearsed answers might also not be about the question asked, as there is considerable variety in questions, even though the range of topics is quite limited.',
+            'After Candidate A finishes, it if time for Candidate B to answer one additional question from the interlocutor. This question relates to the same set of pictures. It can be either about choosing one of the pictures, like, “In which might the people feel more comfortable?” or a more general one relating to the situation, where you don’t have to choose a picture, for example, “Is it better to study alone or with others?”. Candidate B has 30 seconds to answer the question. After Candidate B has answered, they switch roles. This time, Candidate B gets two pictures, a question from the examiner, and one minute to answer it. Then Candidate A gets 30 seconds and one related question.',
             {
               title: 'Extra tip',
-              text: 'For better or worse, there are no helpful phrases or tricks for FCE Speaking Part 1, as this part tests your general ability to talk about familiar topics. You might want to see it as a warm-up before the more challenging parts of the speaking section.',
+              text: 'One important thing is that answering the question is only part of this task. You also have to describe both pictures and compare them.',
             },
             
           ],

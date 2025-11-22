@@ -261,6 +261,10 @@ body {
   pointer-events: none;
 }
 
+.resource-search.is-hidden {
+  display: none;
+}
+
 .link-item.is-hidden {
   display: none;
 }
@@ -435,13 +439,15 @@ body {
 }
 
 body.sidebar-collapsed .resource-panel {
-  min-width: auto;
-  background: transparent;
-  border-color: transparent;
-  box-shadow: none;
-  max-height: auto;
-  overflow: visible;
-}
+    min-width: 68px;
+    width: 68px;
+    padding: 8px;
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    max-height: none;
+    overflow: visible;
+  }
 
 body.sidebar-collapsed .resource-panel::before {
   opacity: 0;
@@ -449,7 +455,8 @@ body.sidebar-collapsed .resource-panel::before {
 
 body.sidebar-collapsed .resource-panel .view-meta,
 body.sidebar-collapsed .resource-panel .resource-board,
-body.sidebar-collapsed .resource-panel .resource-progress {
+body.sidebar-collapsed .resource-panel .resource-progress,
+body.sidebar-collapsed .resource-panel .resource-search {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
@@ -1345,4 +1352,31 @@ body.sidebar-collapsed .sidebar-toggle .toggle-label {
   border-color: rgba(14, 165, 233, 0.5);
   box-shadow: 0 24px 36px rgba(14, 165, 233, 0.18);
   background: linear-gradient(160deg, rgba(224, 231, 255, 0.95), rgba(236, 254, 255, 0.9));
+}
+
+/* Overrides de colapso: ocultar búsqueda y expandir visor */
+body.sidebar-collapsed .resource-search,
+body.sidebar-collapsed .resource-panel .resource-search {
+  display: none !important;
+}
+
+body.sidebar-collapsed .resource-panel {
+  min-width: 88px;
+  width: 88px;
+  padding: 8px;
+}
+
+body.sidebar-collapsed .sidebar-toggle {
+  width: 52px;
+  padding: 10px;
+  border-radius: 18px;
+  justify-content: center;
+}
+
+body.sidebar-collapsed .layout {
+  grid-template-columns: 96px minmax(0, 1fr) !important;
+}
+
+body.sidebar-collapsed .viewer-panel {
+  grid-column: auto;
 }
