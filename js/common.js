@@ -25,6 +25,7 @@
   const sliderTabs = sliderControls?.tabs || [];
   const VIEWED_KEY = 'viewerHistory';
   const COLLAPSE_KEY = 'sidebarCollapsed';
+  let searchInput = null;
 
   highlightActiveNav();
 
@@ -584,6 +585,7 @@
     const isSeen = viewedDocs.has(linkId);
 
     const titleText = link && link.titulo ? link.titulo : `Recurso ${index + 1}`;
+    wrapper.dataset.search = [resourceTitle || '', titleText || ''].join(' ').trim();
     const videoSource = getVideoSource(link);
     const highlightEntries = getHighlightEntries(link);
     const content = document.createElement('div');
@@ -782,6 +784,7 @@
     });
     totalDocs = currentDocIds.size;
     updateProgress();
+    ensureSearchBar();
 
     accordionCards.forEach((card) => {
       card.addEventListener('toggle', () => {
@@ -820,4 +823,53 @@
   }
 
   window.initializeView = initializeView;
+
+  function ensureSearchBar() {
+    if (!resourcePanel) return;
+    let shell = resourcePanel.querySelector('.resource-search');
+    if (!shell) {
+      shell = document.createElement('div');
+      shell.className = 'resource-search';
+      shell.innerHTML = `
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M9 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Zm0 0L3.5 9m8.5 3.5 2.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <input id="resourceSearchInput" type="search" placeholder="Busca PDF o video por nombre..." aria-label="Buscar recursos" autocomplete="off" />
+      `;
+      const progressEl = resourcePanel.querySelector('.resource-progress');
+      if (progressEl) {
+        progressEl.insertAdjacentElement('afterend', shell);
+      } else {
+        resourcePanel.insertBefore(shell, resourcePanel.firstChild);
+      }
+      searchInput = shell.querySelector('#resourceSearchInput');
+      searchInput?.addEventListener('input', (event) => {
+        const term = event.target.value || '';
+        filterResources(term);
+      });
+    } else if (!searchInput) {
+      searchInput = shell.querySelector('#resourceSearchInput');
+    }
+  }
+
+  function filterResources(term) {
+    const query = (term || '').trim().toLowerCase();
+    const cards = Array.from(resourcePanel.querySelectorAll('.resource-card'));
+    cards.forEach((card) => {
+      const links = Array.from(card.querySelectorAll('.link-item'));
+      let visibleCount = 0;
+      links.forEach((item) => {
+        const haystack = (item.dataset.search || '').toLowerCase();
+        const match = !query || haystack.includes(query);
+        item.classList.toggle('is-hidden', !match);
+        if (match) visibleCount += 1;
+      });
+      const hasVisible = visibleCount > 0;
+      card.classList.toggle('is-filtered-out', !hasVisible);
+      if (hasVisible && !card.open) {
+        card.open = true;
+        card.classList.add('active');
+      }
+    });
+  }
 })();
