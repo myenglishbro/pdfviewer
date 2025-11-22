@@ -26,11 +26,13 @@
   const VIEWED_KEY = 'viewerHistory';
   const COLLAPSE_KEY = 'sidebarCollapsed';
   let searchInput = null;
+  let captureOverlay = null;
 
   // Deshabilita menú contextual para reducir copia casual
   document.addEventListener('contextmenu', (event) => {
     event.preventDefault();
   });
+  setupCaptureOverlay();
 
   highlightActiveNav();
 
@@ -163,6 +165,7 @@
   }
 
   attachSliderEvents();
+  attachCaptureListener();
 
   function highlightActiveNav() {
     if (!document || !document.body) return;
@@ -828,6 +831,32 @@
   }
 
   window.initializeView = initializeView;
+
+  function setupCaptureOverlay() {
+    if (!document || captureOverlay) return;
+    const overlay = document.createElement('div');
+    overlay.className = 'capture-overlay';
+    overlay.textContent = 'Captura bloqueada';
+    document.body.appendChild(overlay);
+    captureOverlay = overlay;
+  }
+
+  function showCaptureOverlay() {
+    if (!captureOverlay) return;
+    captureOverlay.classList.add('show');
+    clearTimeout(showCaptureOverlay.timer);
+    showCaptureOverlay.timer = setTimeout(() => {
+      captureOverlay.classList.remove('show');
+    }, 1800);
+  }
+
+  function attachCaptureListener() {
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'PrintScreen') {
+        showCaptureOverlay();
+      }
+    });
+  }
 
   function ensureSearchBar() {
     if (!resourcePanel) return;

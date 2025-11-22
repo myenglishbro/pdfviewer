@@ -41,6 +41,8 @@
   document.addEventListener('contextmenu', (event) => {
     event.preventDefault();
   });
+  setupCaptureOverlay();
+  attachCaptureListener();
 
   if (!modal || !form || !userInput || !passInput || !submitBtn) {
     return;
@@ -131,6 +133,33 @@
   passInput.addEventListener('blur', () => {
     capsWarning.textContent = '';
   });
+
+  function setupCaptureOverlay() {
+    const exists = document.querySelector('.capture-overlay');
+    if (exists) return;
+    const overlay = document.createElement('div');
+    overlay.className = 'capture-overlay';
+    overlay.textContent = 'Captura bloqueada';
+    document.body.appendChild(overlay);
+  }
+
+  function showCaptureOverlay() {
+    const overlay = document.querySelector('.capture-overlay');
+    if (!overlay) return;
+    overlay.classList.add('show');
+    clearTimeout(showCaptureOverlay.timer);
+    showCaptureOverlay.timer = setTimeout(() => {
+      overlay.classList.remove('show');
+    }, 1800);
+  }
+
+  function attachCaptureListener() {
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'PrintScreen') {
+        showCaptureOverlay();
+      }
+    });
+  }
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();

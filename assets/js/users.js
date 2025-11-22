@@ -3,8 +3,15 @@
   // Agrega, elimina o edita entradas aqui mismo.
   const campusUsers = [
     { username: 'myenglishbro', password: 'acelingua', role: 'demo' },
-    // { username: 'usuario2', password: 'clave2', role: 'demo' },
-    // { username: 'usuario3', password: 'clave3', role: 'coach' },
+     { username: 'zarela', password: 'cerdan', role: 'student' },
+     { username: 'alhely', password: 'quispe', role: 'student' },
+      { username: 'luis', password: 'amoreno', role: 'student' },
+      { username: 'laxmi', password: 'aceb2', role: 'student' },
+      { username: 'stephanie ', password: 'carreño', role: 'student' },
+      { username: 'cecilia ', password: 'matta', role: 'student' },
+       { username: 'martiza ', password: 'aceb2', role: 'student' },
+
+
   ];
 
   const normalize = (value) => (value || '').trim().toLowerCase();
