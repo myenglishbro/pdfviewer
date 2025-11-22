@@ -34,8 +34,13 @@
                 (entry.password || '').trim() === pass
             ) || null
           );
-        };
+      };
   let targetUrl = DEFAULT_URL;
+
+  // Deshabilita menú contextual para disuadir copia casual
+  document.addEventListener('contextmenu', (event) => {
+    event.preventDefault();
+  });
 
   if (!modal || !form || !userInput || !passInput || !submitBtn) {
     return;

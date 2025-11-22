@@ -27,6 +27,11 @@
   const COLLAPSE_KEY = 'sidebarCollapsed';
   let searchInput = null;
 
+  // Deshabilita menú contextual para reducir copia casual
+  document.addEventListener('contextmenu', (event) => {
+    event.preventDefault();
+  });
+
   highlightActiveNav();
 
   if (!titleEl || !descEl || !cardContainer) {

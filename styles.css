@@ -22,6 +22,24 @@ body {
   line-height: 1.35;
 }
 
+/* Desactiva selección de texto (excepto inputs) para disuadir copiado directo */
+body,
+.no-select {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea,
+button,
+select,
+option {
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
 .view-navbar {
   position: sticky;
   top: 0;
