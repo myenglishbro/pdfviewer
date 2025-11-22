@@ -1126,6 +1126,23 @@ body.sidebar-collapsed .sidebar-toggle .toggle-label {
   flex-direction: column;
 }
 
+.viewer-frame::after {
+  content: 'myenglishbro';
+  position: absolute;
+  inset: 24px;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  font-size: 3.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(15, 23, 42, 0.08);
+  text-transform: uppercase;
+  transform: rotate(-18deg);
+  mix-blend-mode: multiply;
+  z-index: 2;
+}
+
 .viewer-frame iframe {
   width: 100%;
   flex: 1;
@@ -1138,8 +1155,9 @@ body.sidebar-collapsed .sidebar-toggle .toggle-label {
 
 .iframe-mask {
   position: absolute;
-  top: 12px;
-  right: 14px;
+  top: 8px;
+  right: -10px;
+  z-index: 5;
   left: auto;
   border: none;
   border-radius: 14px;
@@ -1153,7 +1171,7 @@ body.sidebar-collapsed .sidebar-toggle .toggle-label {
   align-items: center;
   gap: 6px;
   cursor: pointer;
-  min-width: 134px;
+  min-width: 148px;
   letter-spacing: normal;
   text-transform: none;
   backdrop-filter: blur(8px);
@@ -1237,8 +1255,8 @@ body.sidebar-collapsed .sidebar-toggle .toggle-label {
   }
 
   .iframe-mask {
-    top: 10px;
-    right: 10px;
+    top: 6px;
+    right: -4px;
     padding: 8px 12px;
   }
 
