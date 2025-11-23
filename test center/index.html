@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -115,7 +115,7 @@
       color: #64748b;
     }
 
-    /* Menú de categorías */
+    /* MenÃº de categorÃ­as */
     .tc-menu {
       display: flex;
       flex-direction: column;
@@ -324,7 +324,7 @@
     }
 
     .empty-state::before {
-      content: "🧪";
+      content: "ðŸ§ª";
       display: block;
       margin-bottom: 4px;
       font-size: 1.2rem;
@@ -338,7 +338,7 @@
         <span>B2</span>
         Cambridge Campus
       </a>
-      <div class="nav-dropdown" role="navigation" aria-label="Cambiar vista">
+      <details class="nav-dropdown" role="navigation" aria-label="Cambiar vista">
         <summary class="nav-toggle" aria-label="Abrir menú de vistas">
           <span>Vistas</span>
           <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -357,25 +357,24 @@
           </nav>
         </div>
       </div>
-    </div>
-  </header>
+    </details>  </header>
 
   <main class="tc-shell">
     <section class="tc-panel">
       <header class="tc-header">
         <p class="summary-subtitle">Test Center</p>
         <h1>Selecciona la skill</h1>
-        <p>Elige una categoría para ver los ejercicios sugeridos y abrir el recurso.</p>
+        <p>Elige una categorÃ­a para ver los ejercicios sugeridos y abrir el recurso.</p>
       </header>
-      <div id="tcMenu" class="tc-menu" aria-label="Menú de categorías"></div>
+      <div id="tcMenu" class="tc-menu" aria-label="MenÃº de categorÃ­as"></div>
     </section>
 
     <section class="tc-panel">
       <div class="tc-content">
         <div class="tc-header">
-          <p class="summary-subtitle" id="tcCategoryLabel">Categoría</p>
-          <h2 id="tcCategoryTitle">Elige una categoría</h2>
-          <p id="tcCategoryDesc" class="summary-meta">Mostraremos aquí los ejercicios disponibles.</p>
+          <p class="summary-subtitle" id="tcCategoryLabel">CategorÃ­a</p>
+          <h2 id="tcCategoryTitle">Elige una categorÃ­a</h2>
+          <p id="tcCategoryDesc" class="summary-meta">Mostraremos aquÃ­ los ejercicios disponibles.</p>
         </div>
         <div id="tcItems" class="tc-items"></div>
       </div>
@@ -385,3 +384,13 @@
   <script src="./js/test-center.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
