@@ -1,0 +1,19 @@
+{
+  "prompts": [
+    {
+      "tag": "Task 1",
+      "title": "Travel vs City life",
+      "instruction": "Compara el PDF: similitudes, diferencias y cu�l prefieres. Incluye ambiente, personas y actividades.",
+      "pdf": "https://drive.google.com/file/d/10AoVDd2DB3ht07V3qVm3pbj7U2h-mtk1/view?usp=sharing",
+      "timeLimitSec": 75
+    },
+    {
+      "tag": "Task 2",
+      "title": "Work & Study",
+      "instruction": "Lee/observa el PDF y explica qu� tipo de ambiente prefieres y por qu�.",
+      "pdf": "https://drive.google.com/file/d/1bBiyvYGHrYNDb6LEGIGSohElg0z0g7Y3/view?usp=sharing",
+      "timeLimitSec": 75
+    }
+ 
+  ]
+}

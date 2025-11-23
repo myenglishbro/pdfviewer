@@ -1,0 +1,186 @@
+{
+  "categories": [
+    {
+      "id": "speaking",
+      "title": "Speaking",
+      "description": "Practica turnos, descripción de fotos y follow-ups estilo examen.",
+      "items": [
+        {
+          "title": "Part 1 - Warm up",
+          "type": "guía",
+          "duration": "6 min",
+          "link": "./speaking/part1.html",
+          "notes": [
+            "Preguntas personales (ciudad, estudios, hobbies).",
+            "Usa respuestas de 2-3 frases para calentar sin enrollarte."
+          ]
+        },
+        {
+          "title": "Part 2 - Photo compare",
+          "type": "pdf",
+          "duration": "10 min",
+          "link": "./speaking/part2.html",
+          "notes": [
+            "Enfócate en similitudes/diferencias + opinión personal.",
+            "Usa conectores: whereas, while, both, unlike."
+          ]
+        },
+        {
+          "title": "Part 3 - Interaction",
+          "type": "cards/role-play",
+          "duration": "8 min",
+          "link": "./speaking/part3.html",
+          "notes": [
+            "Prioriza: propone, negocia, decide.",
+            "Usa turn-taking: shall we..., how about..., I'd say..."
+          ]
+        },
+        {
+          "title": "Part 4 - Follow-up",
+          "type": "questions",
+          "duration": "8 min",
+          "link": "./speaking/part4.html",
+          "notes": [
+            "Responde en 3-4 frases, amplía con ejemplos.",
+            "Cierra con mini-conclusión o proyección futura."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "listening",
+      "title": "Listening",
+      "description": "Audios tipo paper 3 con key words y distractores comunes.",
+      "items": [
+        {
+          "title": "Part 1 - Short Extracts",
+          "type": "audio",
+          "duration": "12 min",
+          "link": "https://drive.google.com/file/d/listening1/preview",
+          "notes": [
+            "Detecta función: sugerir, quejarse, recomendar.",
+            "Escucha collocations exactas para evitar distractores."
+          ]
+        },
+        {
+          "title": "Part 2 - Sentence Completion",
+          "type": "worksheet",
+          "duration": "14 min",
+          "link": "https://drive.google.com/file/d/listening2/preview",
+          "notes": [
+            "Revisa spelling y word form antes de transcribir.",
+            "Marca sinónimos que puedan sustituir la palabra clave."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "title": "Reading",
+      "description": "Comprensión, banked gaps y matching headings.",
+      "items": [
+        {
+          "title": "Part 5 - MCQ",
+          "type": "pdf",
+          "duration": "15 min",
+          "link": "https://drive.google.com/file/d/reading5/preview",
+          "notes": [
+            "Lee first/last sentence de cada párrafo antes de entrar.",
+            "Localiza sinónimos en el texto antes de elegir opción."
+          ]
+        },
+        {
+          "title": "Part 6 - Gapped Text",
+          "type": "practice",
+          "duration": "18 min",
+          "link": "https://drive.google.com/file/d/reading6/preview",
+          "notes": [
+            "Encuentra pronombres referenciales y conectores puente.",
+            "Mira coherencia entre frases adyacentes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "writing",
+      "title": "Writing",
+      "description": "Modelos y plantillas rápidas para Paper 2.",
+      "items": [
+        {
+          "title": "Essay - Template",
+          "type": "template",
+          "duration": "20 min",
+          "link": "https://drive.google.com/file/d/writingTemplate/preview",
+          "notes": [
+            "Introduce con tesis clara y dos argumentos con ejemplos.",
+            "Concluye con reformulación + takeaway."
+          ]
+        },
+        {
+          "title": "Email - Formal",
+          "type": "pdf",
+          "duration": "15 min",
+          "link": "https://drive.google.com/file/d/writingEmail/preview",
+          "notes": [
+            "Usa register formal: I am writing to, I would appreciate.",
+            "Incluye closing line con call-to-action suave."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kwt",
+      "title": "KWT",
+      "description": "Key Word Transformation con patrones de gramática frecuentes.",
+      "items": [
+        {
+          "title": "Modals & Conditionals",
+          "type": "worksheet",
+          "duration": "12 min",
+          "link": "https://drive.google.com/file/d/kwt1/preview",
+          "notes": [
+            "Reescribe manteniendo tiempo verbal y sentido.",
+            "Ojo con negative inversions y reported speech."
+          ]
+        },
+        {
+          "title": "Comparisons & Clefts",
+          "type": "drill",
+          "duration": "10 min",
+          "link": "https://drive.google.com/file/d/kwt2/preview",
+          "notes": [
+            "Evita repetir palabras del prompt; usa sinónimos precisos.",
+            "Practica 'it was ... that' y 'what ... is'."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "word-formation",
+      "title": "Word Formation",
+      "description": "Derivación con sufijos y prefijos comunes en B2.",
+      "items": [
+        {
+          "title": "Noun & Adjective forms",
+          "type": "worksheet",
+          "duration": "14 min",
+          "link": "https://drive.google.com/file/d/wf1/preview",
+          "notes": [
+            "Revisa prefijos in-/un-/dis- y sufijos -ness/-ment/-ity.",
+            "Si dudas, piensa en la función gramatical de la frase."
+          ]
+        },
+        {
+          "title": "Verb families",
+          "type": "drill",
+          "duration": "10 min",
+          "link": "https://drive.google.com/file/d/wf2/preview",
+          "notes": [
+            "Transforma a phrasal verbs donde aplique (set up, carry out).",
+            "Evita duplicar prefijos con verbos ya negativos."
+          ]
+        }
+      ]
+    }
+  ]
+}

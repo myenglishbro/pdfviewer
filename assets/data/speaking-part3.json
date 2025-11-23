@@ -1,0 +1,40 @@
+{
+  "prompts": [
+    {
+      "tag": "Task 1",
+      "title": "Organizar un evento escolar",
+      "instruction": "Negocia opciones para un evento: prioriza presupuesto, lugar y actividades.",
+      "goal": "Termina con 2 opciones claras y una decisión final.",
+      "bullets": [
+        "Comparte pros y contras de cada opción.",
+        "Propón cómo repartir el presupuesto.",
+        "Cierra con un acuerdo: fechas, lugar y actividad principal."
+      ],
+      "timeLimitSec": 120
+    },
+    {
+      "tag": "Task 2",
+      "title": "Mejorar un espacio de trabajo",
+      "instruction": "Discute cómo hacer el lugar más cómodo y productivo.",
+      "goal": "Acordar 3 mejoras concretas.",
+      "bullets": [
+        "Iluminación y ruido.",
+        "Distribución del mobiliario.",
+        "Herramientas o tecnología necesarias."
+      ],
+      "timeLimitSec": 120
+    },
+    {
+      "tag": "Task 3",
+      "title": "Plan de fin de semana en grupo",
+      "instruction": "Elige actividades para un grupo con diferentes gustos.",
+      "goal": "Selecciona dos actividades y horario.",
+      "bullets": [
+        "Actividad al aire libre vs interior.",
+        "Presupuesto máximo por persona.",
+        "Logística de transporte y tiempo."
+      ],
+      "timeLimitSec": 120
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "prompts": [
+    {
+      "skill": "speaking",
+      "task": 1,
+      "title": "Task 1 · Warm up",
+      "question": "Where do you live?",
+      "type": "prompt",
+      "timeLimitSec": 60,
+      "verbs": ["live", "stay", "move", "grow", "enjoy", "visit"],
+      "examples": [
+        "I live in a small town near the coast. It’s a peaceful place with friendly people and beautiful beaches.",
+        "I live in Lima, the capital city of Peru. I really enjoy its mix of modern life and old traditions.",
+        "Currently, I live with my family in an apartment in the city center, which is very convenient for work and shopping."
+      ]
+    },
+    {
+      "skill": "speaking",
+      "task": 2,
+      "title": "Task 2 · Studies / Work",
+      "question": "Do you study or work? What does a typical day look like for you?",
+      "type": "prompt",
+      "timeLimitSec": 60,
+      "verbs": ["study", "work", "commute", "manage", "organize", "handle"],
+      "examples": [
+        "I’m studying engineering, so my days are usually split between lectures and lab sessions, with some group projects in the afternoon.",
+        "I work as a customer support rep. I start by checking tickets, then handle calls, and finish with follow-ups for complex cases.",
+        "I work remotely. I usually start at 8 am, focus on emails and planning first, then have meetings before lunch, and do deep work in the afternoon."
+      ]
+    },
+    {
+      "skill": "speaking",
+      "task": 3,
+      "title": "Task 3 · Free time",
+      "question": "What do you usually do in your free time?",
+      "type": "prompt",
+      "timeLimitSec": 60,
+      "verbs": ["enjoy", "spend", "relax", "watch", "play", "hang out"],
+      "examples": [
+        "I usually read novels or watch documentaries. It helps me relax after a long day.",
+        "On weekends I like to play football with friends and then grab something to eat together.",
+        "I spend most of my free time learning guitar and practicing songs I like."
+      ]
+    }
+  ]
+}

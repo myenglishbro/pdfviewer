@@ -1513,3 +1513,23 @@ body.sidebar-collapsed .layout {
 body.sidebar-collapsed .viewer-panel {
   grid-column: auto;
 }
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.sidebar-collapsed .layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.sidebar-collapsed .resource-panel {
+    width: 100%;
+    min-width: auto;
+    padding: 10px 14px;
+  }
+
+  body.sidebar-collapsed .viewer-panel {
+    grid-column: 1 / -1;
+  }
+}

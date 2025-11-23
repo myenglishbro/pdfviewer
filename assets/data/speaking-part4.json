@@ -1,0 +1,40 @@
+{
+  "prompts": [
+    {
+      "tag": "Task 1",
+      "title": "Tecnología y trabajo",
+      "instruction": "¿Cómo ha cambiado la tecnología tu forma de trabajar o estudiar?",
+      "goal": "Responde en 3-4 frases con ejemplo y proyección futura.",
+      "bullets": [
+        "Ejemplo personal (herramienta o app).",
+        "Efecto positivo/negativo en productividad.",
+        "Cómo crees que cambiará en 5 años."
+      ],
+      "timeLimitSec": 70
+    },
+    {
+      "tag": "Task 2",
+      "title": "Viajes y cultura",
+      "instruction": "¿Qué aprendes al viajar a lugares nuevos?",
+      "goal": "Incluye ejemplo y mini-conclusión.",
+      "bullets": [
+        "Experiencia concreta (ciudad/país).",
+        "Qué cambió en tu perspectiva.",
+        "Qué harías diferente en el próximo viaje."
+      ],
+      "timeLimitSec": 70
+    },
+    {
+      "tag": "Task 3",
+      "title": "Bienestar y hábitos",
+      "instruction": "¿Cómo cuidas tu bienestar en semanas ocupadas?",
+      "goal": "Da 2 hábitos y cómo te ayudan.",
+      "bullets": [
+        "Rutina corta (ejercicio, sueño, comida).",
+        "Impacto en energía o ánimo.",
+        "Consejo que darías a un amigo."
+      ],
+      "timeLimitSec": 70
+    }
+  ]
+}
