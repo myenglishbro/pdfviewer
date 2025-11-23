@@ -46,6 +46,27 @@
             
           ],
         },
+         {
+          titulo: 'B2 First Speaking test - Part 1 | Cambridge English ',
+          descripcion: 'PDF ',
+          video: 'https://www.youtube.com/embed/IArd6ZadFJ4?si=cpM7OI4vqMi-UcrU',
+          videoTitle: 'Updated 2025',
+           url: 'https://drive.google.com/file/d/13wiBSQuGf0HSBzilXjY1bjH76-oWYJKp/view?usp=sharing',
+
+          highlights: [
+            {
+              title: 'Part 1: Interview (interlocutor and candidate)',
+              text: 'Part 1 focuses on your ability to talk about topics of general interest, such as your work or studies, how you spend your free time, or your plans for the future — something you are familiar with. In this part, the interlocutor asks each candidate two or three questions. You are expected to listen to what the other candidate says as well as the questions asked. The reason is that you might be asked the same question (e.g., “And what about you?”). However, this part does not involve direct communication between candidates. Part 1 is about two minutes long.',
+            },
+            'The key is to keep your answers fairly short — two or three sentences should be enough. Stick to the topic of the question. Your answers should sound natural — do not use any memorised responses. Such answers are easy to spot and can often lead to a lower mark. Rehearsed answers might also not be about the question asked, as there is considerable variety in questions, even though the range of topics is quite limited.',
+            {
+              title: 'Extra tip',
+              text: 'For better or worse, there are no helpful phrases or tricks for FCE Speaking Part 1, as this part tests your general ability to talk about familiar topics. You might want to see it as a warm-up before the more challenging parts of the speaking section.',
+            },
+            
+          ],
+        },
+       
         {
           titulo: '🎯Wrap up Part 01  ',
           descripcion: 'PDF ',
@@ -92,6 +113,16 @@
             
           ],
         },
+
+         {
+          titulo: 'B2 First Speaking test - Part 2 | Cambridge English ',
+          descripcion: 'PDF ',
+          video: 'https://www.youtube.com/embed/kASNrQNzaks?si=3hcKaUinqZiLF0bt',
+          videoTitle: 'Updated 2025',
+           url: 'https://drive.google.com/file/d/1qUiKQmp3HVHR8FIROEd9bdm9YLuGktvE/view?usp=sharing',
+
+         
+        },
          {
           titulo: '🎯Wrap up Part 02  ',
           descripcion: 'PDF ',
@@ -115,24 +146,29 @@
       description: ' ',
       enlaces: [
         {
+          titulo: 'App Words',
+          descripcion: 'PDF ',
+           url: 'https://learnibox.vercel.app/vocab',
+        },
+        {
           titulo: 'List 01 ',
           descripcion: 'PDF ',
-           url: 'https://drive.google.com/file/d/1S8x1T_F486L1hYbyPdTeL4rvx-uQXGEt/view?usp=sharing ',
+           url: 'https://drive.google.com/file/d/1S8x1T_F486L1hYbyPdTeL4rvx-uQXGEt/view?usp=sharing',
         },
         {
           titulo: 'List 02 ',
           descripcion: 'PDF ',
-           url: 'https://drive.google.com/file/d/1CA7Ub9WI-QKTBXhZI2S6yBrQV5gez1Jy/view?usp=sharing ',
+           url: 'https://drive.google.com/file/d/1CA7Ub9WI-QKTBXhZI2S6yBrQV5gez1Jy/view?usp=sharing',
         },
         {
           titulo: 'List 03 ',
           descripcion: 'PDF ',
-           url: 'https://drive.google.com/file/d/1ETAjorHO8WFszYjEi6b_G6e8FM4i6y6N/view?usp=sharing ',
+           url: 'https://drive.google.com/file/d/1ETAjorHO8WFszYjEi6b_G6e8FM4i6y6N/view?usp=sharing',
         },
          {
           titulo: 'List 04 ',
           descripcion: 'PDF ',
-           url: 'https://drive.google.com/file/d/1uvJn25j4BA2gtkdvJZ5qvdY9GZs9Th0_/view?usp=sharing ',
+           url: 'https://drive.google.com/file/d/1uvJn25j4BA2gtkdvJZ5qvdY9GZs9Th0_/view?usp=sharing',
         },
       
       ],
@@ -149,9 +185,45 @@
           titulo: 'Simulation 01 ',
           descripcion: 'PDF ',
            url: 'https://drive.google.com/file/d/1QhvhLsCjF6V1BaYqpSd3cV9lgNuOCw_h/view?usp=sharing',
-        }
+        },
+
         
+        
+         {
+          titulo: 'B2 First Speaking test - Victoria and Edward ',
+          descripcion: 'PDF ',
+          video: 'https://www.youtube.com/embed/EdeZp0n0JHw?si=dasbcPMLTEvu0pZE',
+          videoTitle: 'Updated 2025',
+           url: 'https://drive.google.com/file/d/1FhjCd2nooxGxZp05I0d8-b5bihB0pQKb/view?usp=sharing',
+
+          
+        },
+         {
+          titulo: 'B2 First Speaking test - Florine and Maria | Cambridge English',
+          descripcion: 'PDF ',
+          video: 'https://www.youtube.com/embed/-tqeI9t4x9E?si=tR1aPXNu0BoSEFPi',
+          videoTitle: 'Updated 2025',
+           url: 'https://drive.google.com/file/d/1AoKSJe7W-IyD00W7vaNvjet4RHvY4nMD/view?usp=sharing',
+
+          
+        },
+        ,
       
+         {
+          titulo: 'Examiners talking about Speaking Tests',
+          descripcion: 'PDF ',
+          video: 'https://www.youtube.com/embed/iTdte3pksBs?si=Jq7xeJG8hhnSVwTB',
+          videoTitle: 'Updated 2025',
+
+          highlights: [
+            {
+              title: 'Important!',
+              text: 'For your Cambridge Speaking test, remember that the key is to listen carefully and always keep the conversation going. You should interact naturally with both your partner and the examiner, and try to move the conversation forward instead of giving very short answers. Use eye contact and positive body language to encourage your partner, and be resourceful with your language, always trying to find a way to express yourself, even when you don’t know a specific word. Make sure you balance fluency and accuracy, and don’t be afraid to ask questions if you don’t understand something. Support your partner when needed and use all the preparation you’ve done to help you perform confidently. Trust that you can overcome nerves, maintain the flow for a full minute, and that you know how long your answers should be, including when you need to extend them. Finally, don’t get distracted if the examiner interrupts you—this is completely normal. At the end of the day, PREPARATION IS KEY.',
+            }
+           
+            
+          ],
+        },
       ],
     },
    
