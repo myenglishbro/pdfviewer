@@ -71,6 +71,8 @@
     activeIndex = index;
     syncActiveButton();
     stopTimer(true);
+    // Clear transcript when switching tasks to avoid mixing answers
+    if (transcriptArea) transcriptArea.value = '';
     const item = prompts[index];
     if (!detail.shell) return;
     detail.shell.style.display = 'flex';
@@ -151,15 +153,19 @@
     recognition.interimResults = true;
     recognition.continuous = true;
     recognition.onresult = (event) => {
-      let finalText = transcriptArea?.value || '';
-      for (let i = event.resultIndex; i < event.results.length; i++) {
-        const transcript = event.results[i][0].transcript;
+      // Combine texto final + interino para mostrar mientras se habla
+      let finalText = '';
+      let interimText = '';
+      for (let i = 0; i < event.results.length; i++) {
+        const transcript = event.results[i][0].transcript.trim();
         if (event.results[i].isFinal) {
-          finalText += (finalText ? ' ' : '') + transcript.trim();
+          finalText += (finalText ? ' ' : '') + transcript;
+        } else {
+          interimText = transcript;
         }
       }
       if (transcriptArea) {
-        transcriptArea.value = finalText;
+        transcriptArea.value = (finalText + ' ' + interimText).trim();
       }
     };
     recognition.start();
